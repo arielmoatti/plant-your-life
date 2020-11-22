@@ -1,0 +1,80 @@
+:root {
+    --lightBlue: #2274a5;
+    --darkBlue: #053276;
+    --darkGrey: #3d3829;
+    --lightGrey: #738087;
+    --beige: #e3e3ca;
+    --lilac: #8f95d3;
+    --green: #447604;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: var(--beige);
+}
+
+a {
+    text-decoration: none;
+}
+
+#app-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: var(--green);
+    height: 150px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 50px;
+    /* -webkit-filter: drop-shadow(5px 5px 5px #222); */
+    filter: drop-shadow(5px 5px 3px #222);
+}
+
+header > nav {
+    background-color: var(--darkGrey);
+    display: flex;
+    gap: 20px;
+    color: var(--beige);
+    height: fit-content;
+}
+
+button {
+    font-family: "Nunito", sans-serif;
+    font-size: 18px;
+    padding: 0.1rem 0.5rem;
+    background-color: #22241f;
+    align-self: center;
+    color: #ccc5b9;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc5b9;
+    color: #22241f;
+    transition: 400ms ease-in-out;
+}
+
+.errMsg {
+    color: #22241f;
+    background-color: #ccc5b9;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 2px solid #de541e;
+    text-shadow: none;
+    margin-top: 20px;
+    text-align: center;
+}
