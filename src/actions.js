@@ -14,24 +14,25 @@ export async function getAllPlants() {
     }
 }
 
-export async function addToWishlist(id) {
+export async function addToWishlist(plant) {
     try {
         // console.log("action: add to wishlist ");
         return {
             type: "ADDED_WISHLIST",
-            id: id,
+            // id: id,
+            plant,
         };
     } catch (err) {
         console.log(" ", err);
     }
 }
 
-export async function removeFromWishlist(id) {
+export async function removeFromWishlist(plant) {
     try {
         // console.log("action: remove from wishlist ");
         return {
             type: "REMOVED_WISHLIST",
-            id: id,
+            plant,
         };
     } catch (err) {
         console.log(" ", err);

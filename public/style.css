@@ -150,13 +150,14 @@ button:hover {
 .plant-card {
     margin: 20px 20px 0 0;
     /* max-width: 450px; */
+    /* height: 450px; */
     padding: 10px;
     background-color: whitesmoke;
     border: 1px solid var(--lightGrey);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     position: relative;
     filter: drop-shadow(5px 5px 3px #222);
     transition: transform 400ms;
@@ -207,30 +208,15 @@ button:hover {
     background-color: transparent;
 
     border: 0 solid transparent;
+    transition: 300ms ease-in-out;
     /* align-self: center; */
 }
 
 #wishIcon:hover {
-    /* transform: scale(1.1); */
-    transform: rotateY(-180deg);
-    filter: drop-shadow(-3px 3px 3px #222);
-
-    transition: 300ms ease-in-out;
-}
-
-#wishIcon:visited {
-    /* transform: scale(1.1); */
+    transform: scale(1.1);
     /* transform: rotateY(-180deg); */
-    /* transition: 300ms ease-in-out; */
+    /* filter: drop-shadow(-3px 3px 3px #222); */
 }
-
-/* 
-button[name="wishlist"]:visited {
-    border: 0 solid transparent;
-}
-button[name="wishlist"]:active {
-    border: 0 solid transparent;
-} */
 
 .wishIconActive {
     color: darkred;
@@ -259,7 +245,6 @@ button[name="wishlist"]:active {
     max-height: 50px;
     max-width: 50px;
     display: flex;
-    /* margin-bottom: 10px; */
     border: 2px solid var(--lilac);
     border-radius: 50%;
     overflow: hidden;
@@ -273,11 +258,16 @@ button[name="wishlist"]:active {
     align-items: center;
     justify-items: center;
     margin-bottom: 10px;
-    /* align-content: center; */
-    /* justify-content: center; */
     gap: 20px;
+}
 
-    /* flex-wrap: wrap;
-    justify-content: space-around;
-     */
+.frontInfo {
+    /* border: 1px solid red; */
+    height: 60px;
+    color: black;
+    display: flex;
+    gap: 30px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 5px 10px;
 }

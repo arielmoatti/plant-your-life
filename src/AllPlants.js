@@ -10,9 +10,9 @@ export default function AllPlants() {
 
     let plants = useSelector((state) => state.allPlants && state.allPlants);
     let wishedPlants = useSelector(
-        (state) =>
-            state.allPlants &&
-            state.allPlants.filter((each) => each.wished == true)
+        (state) => state.wishlist
+        // state.allPlants &&
+        // state.allPlants.filter((each) => each.wished == true)
     );
 
     useEffect(() => {
@@ -23,13 +23,13 @@ export default function AllPlants() {
         console.log("flagWished", flagWished);
     }, [flagWished]);
 
-    let toggleWishlistIcon = (plantId, plantWished) => {
+    let toggleWishlistIcon = (plant, plantWished) => {
         if (!plantWished) {
             setFlagWished(true);
-            dispatch(addToWishlist(plantId));
+            dispatch(addToWishlist(plant));
             console.log("toggler added to wishlist");
         } else {
-            dispatch(removeFromWishlist(plantId));
+            dispatch(removeFromWishlist(plant));
             setFlagWished(false);
             console.log("toggler removed from wishlist");
         }
@@ -57,7 +57,7 @@ export default function AllPlants() {
                                         }
                                         onClick={() =>
                                             toggleWishlistIcon(
-                                                plant.id,
+                                                plant,
                                                 plant.wished
                                             )
                                         }
@@ -80,9 +80,20 @@ export default function AllPlants() {
                                                 alt={`${plant.common_name}`}
                                             />
                                         </div>
-
                                         <h3>{plant.common_name}</h3>
                                         <p>{plant.botanical_name}</p>
+                                        <div className="frontInfo">
+                                            <div>
+                                                type
+                                                <p>{plant.type}</p>
+                                            </div>
+                                            {plant.pet_safe && (
+                                                <div>pet safe</div>
+                                            )}
+                                            {plant.air_purifier && (
+                                                <div>air purifier</div>
+                                            )}
+                                        </div>
                                     </Link>
                                 </div>
                             ))}
