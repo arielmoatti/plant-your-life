@@ -7,6 +7,7 @@ import { getAllPlants, addToWishlist, removeFromWishlist } from "./actions";
 export default function AllPlants() {
     const dispatch = useDispatch();
     const [flagWished, setFlagWished] = useState(false);
+    const [toggleFlipped, setToggleFlipped] = useState(false);
 
     let plants = useSelector((state) => state.allPlants && state.allPlants);
     let wishedPlants = useSelector(
@@ -20,19 +21,27 @@ export default function AllPlants() {
     }, []);
 
     useEffect(() => {
-        console.log("flagWished", flagWished);
+        // console.log("flagWished", flagWished);
     }, [flagWished]);
 
-    let toggleWishlistIcon = (plant, plantWished) => {
+    // let toggleWishlistIcon = (plant, plantWished) => {
+    let toggleWishlistIcon = (e, plant, plantWished) => {
+        // console.log("heart clicked!");
+        e.stopPropagation();
         if (!plantWished) {
             setFlagWished(true);
             dispatch(addToWishlist(plant));
-            console.log("toggler added to wishlist");
+            // console.log("toggler added to wishlist");
         } else {
             dispatch(removeFromWishlist(plant));
             setFlagWished(false);
-            console.log("toggler removed from wishlist");
+            // console.log("toggler removed from wishlist");
         }
+    };
+
+    let toggleCardSide = () => {
+        console.log("class toggled!");
+        setToggleFlipped(!toggleFlipped);
     };
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
@@ -47,25 +56,34 @@ export default function AllPlants() {
                         <h2>in alphabetical order:</h2>
                         <div className="items">
                             {plants.map((plant) => (
-                                <div className="plant-card" key={plant.id}>
+                                <div
+                                    id="plant-card"
+                                    key={plant.id}
+                                    className={
+                                        toggleFlipped ? "flipped" : undefined
+                                    }
+                                >
                                     <div
-                                        id="wishIcon"
-                                        className={
-                                            plant.wished
-                                                ? "wishIconActive"
-                                                : "wishIconInactive"
-                                        }
-                                        onClick={() =>
-                                            toggleWishlistIcon(
-                                                plant,
-                                                plant.wished
-                                            )
-                                        }
+                                        id="frontSide"
+                                        onClick={() => toggleCardSide()}
                                     >
-                                        <i className="fas fa-heart"></i>
-                                    </div>
-
-                                    <Link to={`/plant/${plant.id}`}>
+                                        <div
+                                            id="wishIcon"
+                                            className={
+                                                plant.wished
+                                                    ? "wishIconActive"
+                                                    : "wishIconInactive"
+                                            }
+                                            onClick={(e) =>
+                                                toggleWishlistIcon(
+                                                    e,
+                                                    plant,
+                                                    plant.wished
+                                                )
+                                            }
+                                        >
+                                            <i className="fas fa-heart"></i>
+                                        </div>
                                         <div className="img-container">
                                             <img
                                                 src={
@@ -80,21 +98,32 @@ export default function AllPlants() {
                                                 alt={`${plant.common_name}`}
                                             />
                                         </div>
-                                        <h3>{plant.common_name}</h3>
-                                        <p>{plant.botanical_name}</p>
-                                        <div className="frontInfo">
-                                            <div>
-                                                type
-                                                <p>{plant.type}</p>
+                                        <div className="card-lower-container">
+                                            <h3>{plant.common_name}</h3>
+                                            <p>{plant.botanical_name}</p>
+                                            <div className="frontInfo">
+                                                <div>
+                                                    type
+                                                    <p>{plant.type}</p>
+                                                </div>
+                                                {plant.pet_safe && (
+                                                    <div>pet safe</div>
+                                                )}
+                                                {plant.air_purifier && (
+                                                    <div>air purifier</div>
+                                                )}
                                             </div>
-                                            {plant.pet_safe && (
-                                                <div>pet safe</div>
-                                            )}
-                                            {plant.air_purifier && (
-                                                <div>air purifier</div>
-                                            )}
                                         </div>
-                                    </Link>
+                                    </div>
+                                    <div
+                                        id="backSide"
+                                        onClick={() => toggleCardSide()}
+                                    >
+                                        <p>first</p>
+                                        <p>second</p>
+                                        <p>third</p>
+                                        <p>fourth</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
