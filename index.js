@@ -98,6 +98,15 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/api/plants", async (req, res) => {
+    try {
+        let { rows } = await db.getAllPlants();
+        res.json(rows);
+    } catch (err) {
+        console.log("Error in app GET /api/plants ", err);
+    }
+});
+
 /*
 app.post("/register", (req, res) => {
     const { firstname, lastname, email, password } = req.body;

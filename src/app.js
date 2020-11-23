@@ -6,27 +6,12 @@ import axios from "./axios";
 
 import Logo from "./Logo";
 import Homepage from "./Homepage";
+// import AllPlants from "./AllPlants";
 
 export default function App() {
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        // (async () => {
-        //     try {
-        //         let response = await axios.get("/api/user");
-        //         const { id, first, last, avatar, bio } = response.data.rows;
-        //         this.setState({
-        //             id: id,
-        //             first: first,
-        //             last: last,
-        //             profilePicUrl: avatar,
-        //             bio: bio,
-        //         });
-        //     } catch (err) {
-        //         console.log("error in axios GET /api/user: ", err);
-        //     }
-        // })();
-    }, []);
+    useEffect(() => {}, []);
 
     return (
         <>
@@ -34,11 +19,13 @@ export default function App() {
                 <div id="app-wrapper">
                     <header>
                         <Logo />
-                        <h1>plant your life title here</h1>
+                        <div className="title">
+                            <h1>Plant Your Life</h1>
+                            <p>make your home greener</p>
+                        </div>
                         <nav>
                             <p>login</p>
                             <p>register</p>
-                            <p>menu</p>
                         </nav>
                         {/* <Login />
                         <Registration />
@@ -47,6 +34,7 @@ export default function App() {
 
                     <div id="main-section">
                         <Route exact path="/" render={() => <Homepage />} />
+                        {/* <AllPlants /> */}
                     </div>
                 </div>
             </BrowserRouter>
