@@ -23,10 +23,10 @@ export default function AllPlants() {
     return (
         <>
             <div id="plantsList-wrapper">
-                <h1>all the plants we love</h1>
+                {/* <h1>all the plants we love</h1> */}
                 {plants && (
                     <div className="plants-container">
-                        <h2>in alphabetical order:</h2>
+                        {/* <h2>in alphabetical order:</h2> */}
                         <div className="items">
                             {plants.map((plant) => (
                                 <Card key={plant.id} plant={plant} />

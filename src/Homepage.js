@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,8 +6,13 @@ import AllPlants from "./AllPlants";
 
 export default function Homepage() {
     const dispatch = useDispatch();
-
+    const [allPlantstoggled, setAllPlantsToggeld] = useState(false);
     useEffect(() => {}, []);
+
+    let toggleAllPlants = () => {
+        setAllPlantsToggeld(!allPlantstoggled);
+        console.log("allPlantstoggled", allPlantstoggled);
+    };
 
     return (
         <>
@@ -22,9 +27,12 @@ export default function Homepage() {
                     <button>start plants advisor</button>
                 </div>
                 <div id="all-plants-wrapper">
-                    <button>see all plants</button>
-                    {/* <p>nothing special</p> */}
-                    <AllPlants />
+                    <button onClick={() => toggleAllPlants()}>
+                        {!allPlantstoggled
+                            ? "see all plants"
+                            : "hide full list"}
+                    </button>
+                    {allPlantstoggled && <AllPlants />}
                 </div>
             </div>
         </>
