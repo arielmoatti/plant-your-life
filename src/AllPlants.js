@@ -113,10 +113,16 @@ export default function AllPlants() {
                                         }
                                         onClick={() => toggleCardSide(plant)}
                                     >
-                                        <p>first</p>
-                                        <p>second</p>
-                                        <p>third</p>
-                                        <p>fourth</p>
+                                        <p>watering {plant.watering}</p>
+                                        <p>light {plant.light}</p>
+                                        <p>
+                                            {plant.indoor
+                                                ? "indoor"
+                                                : "outdoor"}
+                                        </p>
+                                        <p>temp range {plant.temp_range}</p>
+                                        <p>max growth {plant.max_growth}</p>
+                                        <p>difficulty {plant.difficulty}</p>
                                     </div>
                                 </div>
                             ))}

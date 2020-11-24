@@ -247,7 +247,8 @@ button:hover {
     /* backface-visibility: hidden; */
 
     /* transform-style: preserve-3d;
-    transition: 0.6s; */
+     */
+    transition: 0.6s;
 }
 
 #frontSide {
@@ -258,7 +259,7 @@ button:hover {
 
 #backSide {
     /* border: 1px solid green; */
-    background-color: yellow;
+    /* background-color: yellow; */
     height: 418px;
     width: 300px;
     /* filter: alpha(opacity=100); */
