@@ -384,13 +384,22 @@ button:hover {
     color: black;
 }
 
-#wishlist-sidebar .img-container,
-#back-card-top .img-container {
+#wishlist-sidebar .img-container {
     max-height: 50px;
     max-width: 50px;
     display: flex;
     border: 2px solid var(--lilac);
     border-radius: 50%;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#back-card-top .img-container {
+    max-height: 50px;
+    max-width: 50px;
+    display: flex;
+    border: 2px solid var(--lilac);
+    border-radius: 5px;
     overflow: hidden;
     justify-content: center;
 }
@@ -407,9 +416,8 @@ button:hover {
 
 #back-card-top {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-items: flex-start;
+    padding-left: 15px;
     margin-bottom: 10px;
     gap: 15px;
 }

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPlants } from "./actions";
 
 import Card from "./Card";
+import Wishlist from "./Wishlist";
 
 export default function AllPlants() {
     const dispatch = useDispatch();
@@ -38,26 +39,10 @@ export default function AllPlants() {
                     {wishedPlants && (
                         <div className="items">
                             {wishedPlants.map((wishplant) => (
-                                <div
+                                <Wishlist
                                     key={wishplant.id}
-                                    className="wishlistItem"
-                                >
-                                    <div className="img-container">
-                                        <img
-                                            src={
-                                                wishplant.img_url ||
-                                                "/fallback-plant.png"
-                                            }
-                                            onError={(e) => {
-                                                e.target.onerror = null;
-                                                e.target.src =
-                                                    "/fallback-plant.png";
-                                            }}
-                                            alt={`${wishplant.common_name}`}
-                                        />
-                                    </div>
-                                    <p>{wishplant.common_name}</p>
-                                </div>
+                                    wishplant={wishplant}
+                                />
                             ))}
                         </div>
                     )}
