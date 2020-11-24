@@ -38,3 +38,27 @@ export async function removeFromWishlist(plant) {
         console.log(" ", err);
     }
 }
+
+export async function showBack(plantId) {
+    try {
+        console.log("action: flag flipped to back");
+        return {
+            type: "FLIP_BACK",
+            id: plantId,
+        };
+    } catch (err) {
+        console.log(" ", err);
+    }
+}
+
+export async function showFront(plantId) {
+    try {
+        console.log("action: flag flipped to front");
+        return {
+            type: "FLIP_FRONT",
+            id: plantId,
+        };
+    } catch (err) {
+        console.log(" ", err);
+    }
+}

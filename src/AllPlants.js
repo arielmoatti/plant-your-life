@@ -2,46 +2,40 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getAllPlants, addToWishlist, removeFromWishlist } from "./actions";
+import {
+    getAllPlants,
+    addToWishlist,
+    removeFromWishlist,
+    showBack,
+    showFront,
+} from "./actions";
 
 export default function AllPlants() {
     const dispatch = useDispatch();
-    const [flagWished, setFlagWished] = useState(false);
-    const [toggleFlipped, setToggleFlipped] = useState(false);
 
     let plants = useSelector((state) => state.allPlants && state.allPlants);
-    let wishedPlants = useSelector(
-        (state) => state.wishlist
-        // state.allPlants &&
-        // state.allPlants.filter((each) => each.wished == true)
-    );
+    let wishedPlants = useSelector((state) => state.wishlist);
 
     useEffect(() => {
         dispatch(getAllPlants());
     }, []);
 
-    useEffect(() => {
-        // console.log("flagWished", flagWished);
-    }, [flagWished]);
-
-    // let toggleWishlistIcon = (plant, plantWished) => {
-    let toggleWishlistIcon = (e, plant, plantWished) => {
-        // console.log("heart clicked!");
+    let toggleWishlistIcon = (e, plant) => {
         e.stopPropagation();
-        if (!plantWished) {
-            setFlagWished(true);
+        if (!plant.wished) {
             dispatch(addToWishlist(plant));
-            // console.log("toggler added to wishlist");
         } else {
             dispatch(removeFromWishlist(plant));
-            setFlagWished(false);
-            // console.log("toggler removed from wishlist");
         }
     };
 
-    let toggleCardSide = () => {
+    let toggleCardSide = (plant) => {
         console.log("class toggled!");
-        setToggleFlipped(!toggleFlipped);
+        if (!plant.flipped) {
+            dispatch(showBack(plant.id));
+        } else {
+            dispatch(showFront(plant.id));
+        }
     };
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
@@ -56,16 +50,15 @@ export default function AllPlants() {
                         <h2>in alphabetical order:</h2>
                         <div className="items">
                             {plants.map((plant) => (
-                                <div
-                                    id="plant-card"
-                                    key={plant.id}
-                                    className={
-                                        toggleFlipped ? "flipped" : undefined
-                                    }
-                                >
+                                <div id="plant-card" key={plant.id}>
                                     <div
                                         id="frontSide"
-                                        onClick={() => toggleCardSide()}
+                                        className={
+                                            plant.flipped
+                                                ? "flagHidden"
+                                                : undefined
+                                        }
+                                        onClick={() => toggleCardSide(plant)}
                                     >
                                         <div
                                             id="wishIcon"
@@ -75,11 +68,7 @@ export default function AllPlants() {
                                                     : "wishIconInactive"
                                             }
                                             onClick={(e) =>
-                                                toggleWishlistIcon(
-                                                    e,
-                                                    plant,
-                                                    plant.wished
-                                                )
+                                                toggleWishlistIcon(e, plant)
                                             }
                                         >
                                             <i className="fas fa-heart"></i>
@@ -117,7 +106,12 @@ export default function AllPlants() {
                                     </div>
                                     <div
                                         id="backSide"
-                                        onClick={() => toggleCardSide()}
+                                        className={
+                                            plant.flipped
+                                                ? undefined
+                                                : "flagHidden"
+                                        }
+                                        onClick={() => toggleCardSide(plant)}
                                     >
                                         <p>first</p>
                                         <p>second</p>

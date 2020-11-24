@@ -200,7 +200,7 @@ button:hover {
     position: absolute;
     top: 10px;
     right: 15px;
-    z-index: 2;
+    z-index: 5;
     cursor: pointer;
     padding: 0;
     font-size: 35px;
@@ -215,6 +215,10 @@ button:hover {
     transform: scale(0.9);
     /* transform: rotateY(-180deg); */
     /* filter: drop-shadow(-3px 3px 3px #222); */
+}
+
+.flipped #wishIcon {
+    display: none;
 }
 
 .wishIconActive {
@@ -240,34 +244,37 @@ button:hover {
     position: absolute;
     top: 10px;
     left: 10px;
-    backface-visibility: hidden;
+    /* backface-visibility: hidden; */
 
     /* transform-style: preserve-3d;
     transition: 0.6s; */
 }
 
+#frontSide {
+    /* z-index: 1; */
+    /* filter: alpha(opacity=100); */
+    /* opacity: 1; */
+}
+
 #backSide {
-    border: 1px solid green;
+    /* border: 1px solid green; */
+    background-color: yellow;
     height: 418px;
     width: 300px;
-
-    transform: scale(0.01);
-    filter: alpha(opacity=0);
-    opacity: 0;
+    /* filter: alpha(opacity=100); */
+    /* opacity: 1; */
     /* z-index: 1; */
+    /* transform: scale(0.01); */
 }
 
-.flipped #frontSide {
-    transform: scale(0.01);
-    filter: alpha(opacity=0);
+.flagHidden#frontSide,
+.flagHidden#backSide {
+    z-index: -1;
+    /* background-color: var(--darkBlue);
+    border: 10px solid red; */
+    /* filter: alpha(opacity=0); */
+    /* filter: alpha(opacity=0); */
     opacity: 0;
-}
-
-.flipped #backSide {
-    transform: scale(1);
-    filter: alpha(opacity=100);
-    opacity: 1;
-    /* z-index: 5; */
 }
 
 .frontInfo {
@@ -290,7 +297,7 @@ button:hover {
     position: fixed;
     right: 0;
     top: 100px;
-    z-index: 3;
+    z-index: 10;
     color: black;
 }
 

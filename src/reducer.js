@@ -12,7 +12,6 @@ export default (state = {}, action) => {
             return (state = {
                 ...state,
                 wishlist: [...state.wishlist, action.plant],
-
                 allPlants: state.allPlants.map((plant) => {
                     if (plant.id == action.plant.id) {
                         return {
@@ -39,6 +38,35 @@ export default (state = {}, action) => {
                         return {
                             ...plant,
                             wished: false,
+                        };
+                    } else {
+                        return plant;
+                    }
+                }),
+            });
+
+        case "FLIP_BACK":
+            return (state = {
+                ...state,
+                allPlants: state.allPlants.map((plant) => {
+                    if (plant.id == action.id) {
+                        return {
+                            ...plant,
+                            flipped: true,
+                        };
+                    } else {
+                        return plant;
+                    }
+                }),
+            });
+        case "FLIP_FRONT":
+            return (state = {
+                ...state,
+                allPlants: state.allPlants.map((plant) => {
+                    if (plant.id == action.id) {
+                        return {
+                            ...plant,
+                            flipped: false,
                         };
                     } else {
                         return plant;
