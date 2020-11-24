@@ -32,7 +32,6 @@ export default (state = {}, action) => {
                         (plant) => plant.id != action.plant.id
                     ),
                 ],
-
                 allPlants: state.allPlants.map((plant) => {
                     if (plant.id == action.plant.id) {
                         return {
@@ -59,6 +58,7 @@ export default (state = {}, action) => {
                     }
                 }),
             });
+
         case "FLIP_FRONT":
             return (state = {
                 ...state,
@@ -72,6 +72,12 @@ export default (state = {}, action) => {
                         return plant;
                     }
                 }),
+            });
+
+        case "RETRIEVED_WISHLIST":
+            return (state = {
+                ...state,
+                savedWishlist: action.savedWishlist,
             });
 
         default:

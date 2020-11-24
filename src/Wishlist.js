@@ -2,10 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
+import { getWishlishLocalS } from "./actions";
 
-export default function Wishlist({ wishplant }) {
-    // const dispatch = useDispatch();
+export default function Wishlist() {
+    const dispatch = useDispatch();
     let wishedPlants = useSelector((state) => state.wishlist);
+
+    // useEffect(() => {
+    //     dispatch(getWishlishLocalS());
+    // }, [wishedPlants]);
+
+    useEffect(() => {
+        localStorage.setItem("saved-wishlist", JSON.stringify(wishedPlants));
+    }, [wishedPlants]);
+
     return (
         <>
             <div id="wishlist-sidebar">

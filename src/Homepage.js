@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import AllPlants from "./AllPlants";
+import Wishlist from "./Wishlist";
 
 export default function Homepage() {
     const dispatch = useDispatch();
@@ -11,7 +12,6 @@ export default function Homepage() {
 
     let toggleAllPlants = () => {
         setAllPlantsToggeled(!allPlantstoggled);
-        console.log("allPlantstoggled", allPlantstoggled);
     };
 
     return (
@@ -38,6 +38,7 @@ export default function Homepage() {
                             : "hide full list"}
                     </button>
                     {allPlantstoggled && <AllPlants />}
+                    <Wishlist />
                 </div>
             </div>
         </>
