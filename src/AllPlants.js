@@ -2,13 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
-    getAllPlants,
-    addToWishlist,
-    removeFromWishlist,
-    showBack,
-    showFront,
-} from "./actions";
+import { getAllPlants } from "./actions";
+
+import Card from "./Card";
 
 export default function AllPlants() {
     const dispatch = useDispatch();
@@ -19,24 +15,6 @@ export default function AllPlants() {
     useEffect(() => {
         dispatch(getAllPlants());
     }, []);
-
-    let toggleWishlistIcon = (e, plant) => {
-        e.stopPropagation();
-        if (!plant.wished) {
-            dispatch(addToWishlist(plant));
-        } else {
-            dispatch(removeFromWishlist(plant));
-        }
-    };
-
-    let toggleCardSide = (plant) => {
-        console.log("class toggled!");
-        if (!plant.flipped) {
-            dispatch(showBack(plant.id));
-        } else {
-            dispatch(showFront(plant.id));
-        }
-    };
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
     plants && plants.length == 0 && (plants = null);
@@ -50,81 +28,7 @@ export default function AllPlants() {
                         <h2>in alphabetical order:</h2>
                         <div className="items">
                             {plants.map((plant) => (
-                                <div id="plant-card" key={plant.id}>
-                                    <div
-                                        id="frontSide"
-                                        className={
-                                            plant.flipped
-                                                ? "flagHidden"
-                                                : undefined
-                                        }
-                                        onClick={() => toggleCardSide(plant)}
-                                    >
-                                        <div
-                                            id="wishIcon"
-                                            className={
-                                                plant.wished
-                                                    ? "wishIconActive"
-                                                    : "wishIconInactive"
-                                            }
-                                            onClick={(e) =>
-                                                toggleWishlistIcon(e, plant)
-                                            }
-                                        >
-                                            <i className="fas fa-heart"></i>
-                                        </div>
-                                        <div className="img-container">
-                                            <img
-                                                src={
-                                                    plant.img_url ||
-                                                    "/fallback-plant.png"
-                                                }
-                                                onError={(e) => {
-                                                    e.target.onerror = null;
-                                                    e.target.src =
-                                                        "/fallback-plant.png";
-                                                }}
-                                                alt={`${plant.common_name}`}
-                                            />
-                                        </div>
-                                        <div className="card-lower-container">
-                                            <h3>{plant.common_name}</h3>
-                                            <p>{plant.botanical_name}</p>
-                                            <div className="frontInfo">
-                                                <div>
-                                                    type
-                                                    <p>{plant.type}</p>
-                                                </div>
-                                                {plant.pet_safe && (
-                                                    <div>pet safe</div>
-                                                )}
-                                                {plant.air_purifier && (
-                                                    <div>air purifier</div>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        id="backSide"
-                                        className={
-                                            plant.flipped
-                                                ? undefined
-                                                : "flagHidden"
-                                        }
-                                        onClick={() => toggleCardSide(plant)}
-                                    >
-                                        <p>watering {plant.watering}</p>
-                                        <p>light {plant.light}</p>
-                                        <p>
-                                            {plant.indoor
-                                                ? "indoor"
-                                                : "outdoor"}
-                                        </p>
-                                        <p>temp range {plant.temp_range}</p>
-                                        <p>max growth {plant.max_growth}</p>
-                                        <p>difficulty {plant.difficulty}</p>
-                                    </div>
-                                </div>
+                                <Card key={plant.id} plant={plant} />
                             ))}
                         </div>
                     </div>
