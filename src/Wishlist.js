@@ -5,19 +5,40 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Wishlist({ wishplant }) {
     // const dispatch = useDispatch();
+    let wishedPlants = useSelector((state) => state.wishlist);
     return (
-        <div key={wishplant.id} className="wishlistItem">
-            <div className="img-container">
-                <img
-                    src={wishplant.img_url || "/fallback-plant.png"}
-                    onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = "/fallback-plant.png";
-                    }}
-                    alt={`${wishplant.common_name}`}
-                />
+        <>
+            <div id="wishlist-sidebar">
+                <h3>wish list:</h3>
+                <div className="items">
+                    {wishedPlants && (
+                        <div>
+                            {wishedPlants.map((wishplant) => (
+                                <div
+                                    key={wishplant.id}
+                                    className="wishlistItem"
+                                >
+                                    <div className="img-container">
+                                        <img
+                                            src={
+                                                wishplant.img_url ||
+                                                "/fallback-plant.png"
+                                            }
+                                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                    "/fallback-plant.png";
+                                            }}
+                                            alt={`${wishplant.common_name}`}
+                                        />
+                                    </div>
+                                    <p>{wishplant.common_name}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
             </div>
-            <p>{wishplant.common_name}</p>
-        </div>
+        </>
     );
 }

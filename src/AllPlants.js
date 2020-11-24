@@ -9,9 +9,9 @@ import Wishlist from "./Wishlist";
 
 export default function AllPlants() {
     const dispatch = useDispatch();
+    const [wishlistToggled, setWishlistToggeled] = useState(false);
 
     let plants = useSelector((state) => state.allPlants && state.allPlants);
-    let wishedPlants = useSelector((state) => state.wishlist);
 
     useEffect(() => {
         dispatch(getAllPlants());
@@ -19,6 +19,10 @@ export default function AllPlants() {
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
     plants && plants.length == 0 && (plants = null);
+
+    let toggleWishlistInAllPlants = () => {
+        setWishlistToggeled(!wishlistToggled);
+    };
 
     return (
         <>
@@ -34,19 +38,7 @@ export default function AllPlants() {
                         </div>
                     </div>
                 )}
-                <div id="wishlist-sidebar">
-                    <h3>wish list:</h3>
-                    {wishedPlants && (
-                        <div className="items">
-                            {wishedPlants.map((wishplant) => (
-                                <Wishlist
-                                    key={wishplant.id}
-                                    wishplant={wishplant}
-                                />
-                            ))}
-                        </div>
-                    )}
-                </div>
+                {!wishlistToggled && <Wishlist />}
             </div>
         </>
     );
