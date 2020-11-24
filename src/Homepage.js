@@ -7,11 +7,11 @@ import Wishlist from "./Wishlist";
 
 export default function Homepage() {
     const dispatch = useDispatch();
-    const [allPlantstoggled, setAllPlantsToggeled] = useState(false);
+    const [allPlantsToggled, setAllPlantsToggled] = useState(false);
     useEffect(() => {}, []);
 
     let toggleAllPlants = () => {
-        setAllPlantsToggeled(!allPlantstoggled);
+        setAllPlantsToggled(!allPlantsToggled);
     };
 
     return (
@@ -33,11 +33,11 @@ export default function Homepage() {
                         className="btnShowAllPlants"
                         onClick={() => toggleAllPlants()}
                     >
-                        {!allPlantstoggled
+                        {!allPlantsToggled
                             ? "see all plants"
                             : "hide full list"}
                     </button>
-                    {allPlantstoggled && <AllPlants />}
+                    {allPlantsToggled && <AllPlants />}
                     <Wishlist />
                 </div>
             </div>

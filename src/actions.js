@@ -44,7 +44,7 @@ export async function removeFromWishlist(plant) {
 
 export async function showBack(plantId) {
     try {
-        console.log("action: flag flipped to back");
+        // console.log("action: flag flipped to back");
         return {
             type: "FLIP_BACK",
             id: plantId,
@@ -56,7 +56,7 @@ export async function showBack(plantId) {
 
 export async function showFront(plantId) {
     try {
-        console.log("action: flag flipped to front");
+        // console.log("action: flag flipped to front");
         return {
             type: "FLIP_FRONT",
             id: plantId,
