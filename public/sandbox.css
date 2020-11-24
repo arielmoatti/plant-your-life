@@ -1,0 +1,26 @@
+.temp-cont,
+.growth-cont,
+.diff-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+}
+
+.temp-cont,
+.growth-cont {
+    grid-template-areas: ". .";
+}
+
+.temp-cont {
+    grid-area: temp-cont;
+}
+
+.growth-cont {
+    grid-area: growth-cont;
+}
+
+.diff-cont {
+    grid-template-areas: ".";
+    grid-area: diff-cont;
+}
