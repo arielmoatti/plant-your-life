@@ -232,7 +232,14 @@ button:hover {
 }
 
 #wishIcon:active {
+    /* transform: scale(0.9); */
+    /* transform: rotateY(-180deg); */
+    /* filter: drop-shadow(-3px 3px 3px #222); */
+}
+
+#wishIcon:hover {
     transform: scale(0.9);
+    /* color: white; */
     /* transform: rotateY(-180deg); */
     /* filter: drop-shadow(-3px 3px 3px #222); */
 }
@@ -243,13 +250,10 @@ button:hover {
 
 .wishIconActive {
     color: darkred;
-
-    /* transition: 800ms ease-in-out; */
 }
 
 .wishIconInactive {
     color: whitesmoke;
-    /* transition: 800ms ease-in-out; */
 }
 
 .card-lower-container {

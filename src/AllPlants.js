@@ -8,7 +8,6 @@ import Card from "./Card";
 
 export default function AllPlants() {
     const dispatch = useDispatch();
-    const [wishlistToggled, setWishlistToggeled] = useState(false);
     let plants = useSelector((state) => state.allPlants && state.allPlants);
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
@@ -17,10 +16,6 @@ export default function AllPlants() {
     useEffect(() => {
         dispatch(getAllPlants());
     }, []);
-
-    let toggleWishlistInAllPlants = () => {
-        setWishlistToggeled(!wishlistToggled);
-    };
 
     return (
         <>

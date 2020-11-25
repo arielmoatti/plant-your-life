@@ -11,18 +11,19 @@ import {
 
 export default function Card({ plant }) {
     const dispatch = useDispatch();
+    const [wishIconHover, setWishIconHover] = useState(false);
 
     let toggleWishlistIcon = (e, plant) => {
         e.stopPropagation();
         if (!plant.wished) {
             dispatch(addToWishlist(plant));
+            setWishIconHover(false);
         } else {
             dispatch(removeFromWishlist(plant));
         }
     };
 
     let toggleCardSide = (plant) => {
-        // console.log("class toggled!");
         if (!plant.flipped) {
             dispatch(showBack(plant.id));
         } else {
@@ -42,12 +43,24 @@ export default function Card({ plant }) {
                         plant.wished ? "wishIconActive" : "wishIconInactive"
                     }
                     onClick={(e) => toggleWishlistIcon(e, plant)}
+                    onMouseEnter={() => plant.wished && setWishIconHover(true)}
+                    onMouseLeave={() => plant.wished && setWishIconHover(false)}
                 >
-                    <i
-                        className={
-                            plant.wished ? "fas fa-heart" : "far fa-heart"
-                        }
-                    ></i>
+                    {wishIconHover ? (
+                        <i
+                            className={
+                                plant.wished
+                                    ? "far fa-times-circle"
+                                    : "far fa-heart"
+                            }
+                        ></i>
+                    ) : (
+                        <i
+                            className={
+                                plant.wished ? "fas fa-heart" : "far fa-heart"
+                            }
+                        ></i>
+                    )}
                 </div>
                 <div className="img-container">
                     <img

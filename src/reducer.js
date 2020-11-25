@@ -57,12 +57,32 @@ export default (state = {}, action) => {
                         return plant;
                     }
                 }),
+                wishlist: state.wishlist.map((plant) => {
+                    if (plant.id == action.id) {
+                        return {
+                            ...plant,
+                            flipped: true,
+                        };
+                    } else {
+                        return plant;
+                    }
+                }),
             });
 
         case "FLIP_FRONT":
             return (state = {
                 ...state,
                 allPlants: state.allPlants.map((plant) => {
+                    if (plant.id == action.id) {
+                        return {
+                            ...plant,
+                            flipped: false,
+                        };
+                    } else {
+                        return plant;
+                    }
+                }),
+                wishlist: state.wishlist.map((plant) => {
                     if (plant.id == action.id) {
                         return {
                             ...plant,

@@ -7,7 +7,6 @@ import Card from "./Card";
 
 export default function Wishlist() {
     const dispatch = useDispatch();
-    // const [wishlistToggled, setWishlistToggeled] = useState(false);
     let wishedPlants = useSelector((state) => state.wishlist);
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
