@@ -5,6 +5,27 @@ export async function getAllPlants() {
     // let wishedPlants = useSelector((state) => state.wishlist);
     try {
         const { data } = await axios.get("/api/plants");
+        const dataLocalS = localStorage.getItem("saved-wishlist");
+        console.log("dataLocalS", dataLocalS);
+        if (dataLocalS != "undefined") {
+            // console.log("typeof", typeof dataLocalS);
+            let parsedData = JSON.parse(dataLocalS);
+            console.log("parsedData", parsedData);
+            let ls_wishedId = parsedData.map((ls) => ls.id);
+            console.log("ls_wishedId", ls_wishedId);
+
+            data.map((plant) => {
+                if (ls_wishedId.indexOf(plant.id) != -1) {
+                    return plant.wished == true;
+                }
+            });
+        }
+        // if (dataLocalS) {
+        //     let ls_wishedId = dataLocalS.filter((ls) => ls.id);
+        // }
+        // console.log("ls_wishedId", ls_wishedId);
+
+        // data.map((plant) => plant.id == dataLocalS);
         // console.log("data", data);
         // console.log("action: get list of all plants ");
         return {

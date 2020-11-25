@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import AllPlants from "./AllPlants";
-import Wishlist from "./Wishlist";
+import WishlistSidebar from "./WishlistSidebar";
 
 export default function Homepage() {
     const dispatch = useDispatch();
@@ -38,7 +38,7 @@ export default function Homepage() {
                             : "hide full list"}
                     </button>
                     {allPlantsToggled && <AllPlants />}
-                    <Wishlist />
+                    <WishlistSidebar />
                 </div>
             </div>
         </>
