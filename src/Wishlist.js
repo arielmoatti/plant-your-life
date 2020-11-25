@@ -11,15 +11,19 @@ export default function Wishlist() {
     let wishedPlants = useSelector((state) => state.wishlist);
 
     //making sure that empty arrays appear falsy and filtered out (hide sections)
-    wishedPlants && wishedPlants.length == 0 && (wishedPlants = null);
+    // wishedPlants && wishedPlants.length == 0 && (wishedPlants = null);
 
     useEffect(() => {
         dispatch(getAllPlants());
     }, []);
 
     useEffect(() => {
-        localStorage.setItem("saved-wishlist", JSON.stringify(wishedPlants));
-        console.log("updating wishlist", wishedPlants);
+        wishedPlants &&
+            localStorage.setItem(
+                "saved-wishlist",
+                JSON.stringify(wishedPlants)
+            );
+        // console.log("updating wishlist", wishedPlants);
     }, [wishedPlants]);
 
     return (

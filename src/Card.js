@@ -11,17 +11,6 @@ import {
 
 export default function Card({ plant }) {
     const dispatch = useDispatch();
-    let wishedPlants = useSelector((state) => state.wishlist); //new!
-
-    // useEffect(() => {
-    //     wishedPlants &&
-    //         wishedPlants.length != 0 &&
-    //         localStorage.setItem(
-    //             "saved-wishlist",
-    //             JSON.stringify(wishedPlants)
-    //         );
-    //     console.log("updating wishlist", wishedPlants);
-    // }, [wishedPlants]);
 
     let toggleWishlistIcon = (e, plant) => {
         e.stopPropagation();
