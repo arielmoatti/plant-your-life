@@ -37,6 +37,7 @@ export default function Homepage() {
                             ? "see all plants"
                             : "hide full list"}
                     </button>
+
                     {allPlantsToggled && <AllPlants />}
                     <WishlistSidebar />
                 </div>

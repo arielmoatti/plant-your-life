@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
 import axios from "./axios";
 
+import { getAllPlants } from "./actions";
 import Logo from "./Logo";
 import Homepage from "./Homepage";
 import Wishlist from "./Wishlist";
 
 export default function App() {
     const dispatch = useDispatch();
-
-    useEffect(() => {}, []);
+    useEffect(() => {
+        dispatch(getAllPlants());
+    }, []);
 
     return (
         <BrowserRouter>
@@ -23,6 +24,11 @@ export default function App() {
                         <p>make your home greener</p>
                     </div>
                     <nav>
+                        <Link to="/wishlist">
+                            <div className="navWishlist">
+                                <i className="far fa-heart"></i>
+                            </div>
+                        </Link>
                         <p>login</p>
                         <p>register</p>
                     </nav>

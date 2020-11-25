@@ -74,12 +74,6 @@ export default (state = {}, action) => {
                 }),
             });
 
-        case "RETRIEVED_WISHLIST":
-            return (state = {
-                ...state,
-                savedWishlist: action.savedWishlist,
-            });
-
         default:
             return state;
     }

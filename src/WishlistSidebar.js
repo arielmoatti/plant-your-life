@@ -8,12 +8,12 @@ export default function WishlistSidebar() {
     const dispatch = useDispatch();
     let wishedPlants = useSelector((state) => state.wishlist);
 
-    // useEffect(() => {
-    //     dispatch(getWishlishLocalS());
-    // }, [wishedPlants]);
-
     useEffect(() => {
-        localStorage.setItem("saved-wishlist", JSON.stringify(wishedPlants));
+        wishedPlants &&
+            localStorage.setItem(
+                "saved-wishlist",
+                JSON.stringify(wishedPlants)
+            );
         console.log("updating wishlist", wishedPlants);
     }, [wishedPlants]);
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
+import { getAllPlants } from "./actions";
 import Card from "./Card";
 
 export default function Wishlist() {
@@ -12,9 +13,14 @@ export default function Wishlist() {
     //making sure that empty arrays appear falsy and filtered out (hide sections)
     wishedPlants && wishedPlants.length == 0 && (wishedPlants = null);
 
-    // useEffect(() => {
-    //     dispatch(getAllPlants());
-    // }, []);
+    useEffect(() => {
+        dispatch(getAllPlants());
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("saved-wishlist", JSON.stringify(wishedPlants));
+        console.log("updating wishlist", wishedPlants);
+    }, [wishedPlants]);
 
     return (
         <>

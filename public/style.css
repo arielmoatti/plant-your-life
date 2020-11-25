@@ -63,11 +63,23 @@ header > .title {
 
 header > nav {
     background-color: var(--darkGrey);
+    color: var(--beige);
+    padding: 5px;
     display: flex;
     align-items: center;
+    align-content: space-around;
     gap: 20px;
-    color: var(--beige);
     /* height: fit-content; */
+}
+
+.navWishlist {
+    color: var(--beige);
+    font-size: 30px;
+    transition: 200ms ease-in-out;
+}
+
+.navWishlist:hover {
+    color: darkred;
 }
 
 button {
@@ -118,7 +130,8 @@ button:hover {
     /* padding: 10px; */
 }
 
-#all-plants-wrapper {
+#all-plants-wrapper,
+#wishlist-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,7 +140,8 @@ button:hover {
     /* height: 500px; */
 }
 
-#plantsList-wrapper {
+#plantsList-wrapper,
+#wishlist-wrapper {
     /* background-color: var(--lightGrey); */
     /* text-shadow: 3px 3px 5px #000000; */
     color: var(--darkBlue);
@@ -136,17 +150,19 @@ button:hover {
     flex-direction: column;
 }
 
-.plants-container {
+.plants-container,
+.wishlist-container {
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
 }
 
-.plants-container .items {
+.plants-container .items,
+.wishlist-container .items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     gap: 80px;
     position: relative;
 }
@@ -207,9 +223,10 @@ button:hover {
     cursor: pointer;
     padding: 0;
     font-size: 35px;
-    filter: drop-shadow(3px 3px 3px #222);
+    /* filter: drop-shadow(3px 3px 2px #222); */
+    text-shadow: 2px 2px 3px #222;
     background-color: transparent;
-    border: 0 solid transparent;
+    /* border: 0 solid transparent; */
     transition: 200ms ease-in-out;
     /* align-self: center; */
 }
@@ -226,11 +243,12 @@ button:hover {
 
 .wishIconActive {
     color: darkred;
+
     /* transition: 800ms ease-in-out; */
 }
 
 .wishIconInactive {
-    color: var(--lightGrey);
+    color: whitesmoke;
     /* transition: 800ms ease-in-out; */
 }
 

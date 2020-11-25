@@ -17,6 +17,15 @@ const store = createStore(
 );
 
 let elem;
+//////////////
+/*
+import { Provider, useDispatch } from "react-redux";
+import { getAllPlants } from "./actions";
+const dispatch = useDispatch();
+dispatch(getAllPlants());
+*/
+///////////////
+
 // const userIsLoggedIn = location.pathname != "/welcome";
 
 // if (!userIsLoggedIn) {
