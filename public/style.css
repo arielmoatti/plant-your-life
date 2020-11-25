@@ -13,6 +13,10 @@
     margin: 0;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 body {
     font-family: "Nunito", sans-serif;
     background-color: var(--beige);
@@ -32,7 +36,6 @@ a {
     margin-top: 20px;
     text-align: center;
 }
-
 /* 
 #app-wrapper {
     display: flex;
@@ -41,27 +44,46 @@ a {
 } */
 
 header {
-    background-color: var(--green);
-    height: fit-content;
-    padding: 20px;
+    /* background-color: var(--green); */
+    /* background-image: url("/header_cover.png"); */
+    /* height: 200px; */
+    /* background-size: cover; */
+    /* width: 100%; */
+    /* padding: 20px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+
+    /*overflow: hidden;
+    z-index: 100; */
+}
+
+/* #headerElem {
+    height: 200px;
+} */
+
+#headerElem .img-container {
+    height: 200px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    overflow: hidden;
+    justify-content: center;
 }
 
 .logo {
-    height: 50px;
+    position: absolute;
+    top: 40px;
+    margin: 30px;
+    height: 70px;
     /* -webkit-filter: drop-shadow(5px 5px 5px #222); */
     filter: drop-shadow(5px 5px 3px #222);
 }
 
-header > .title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header > nav {
+#headerElem > nav {
+    position: fixed;
+    /* height: 100%; */
+    top: 0px;
+    right: 0px;
     background-color: var(--darkGrey);
     color: var(--beige);
     padding: 5px;
@@ -69,6 +91,7 @@ header > nav {
     align-items: center;
     align-content: space-around;
     gap: 20px;
+    z-index: 40;
     /* height: fit-content; */
 }
 
@@ -79,7 +102,7 @@ header > nav {
 }
 
 .navWishlist:hover {
-    color: darkred;
+    transform: scale(1.1);
 }
 
 button {
@@ -100,11 +123,12 @@ button:hover {
 }
 
 #homepage-wrapper {
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* justify-content: space-between; */
-    height: 85vh;
+    height: 75vh;
     /* gap: 50px; */
 }
 
@@ -112,11 +136,11 @@ button:hover {
     background-color: whitesmoke;
     border-radius: 10px;
     padding: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
     /* width: 50vw; */
     border: 1px solid lightgray;
     display: flex;
-    width: 95%;
+    width: 85%;
     min-height: 400px;
     flex-direction: column;
     align-items: center;
@@ -134,10 +158,10 @@ button:hover {
 #wishlist-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+#all-plants-wrapper {
     align-items: center;
-    justify-content: center;
-    /* gap: 130px; */
-    /* height: 500px; */
 }
 
 #plantsList-wrapper,
@@ -145,16 +169,23 @@ button:hover {
     /* background-color: var(--lightGrey); */
     /* text-shadow: 3px 3px 5px #000000; */
     color: var(--darkBlue);
-    padding: 30px;
+    /* border: 1px solid green; */
+    padding: 30px 0px 30px 100px;
     display: flex;
     flex-direction: column;
+    /* align-items: flex-start; */
 }
 
 .plants-container,
 .wishlist-container {
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
+    /* justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center; */
 }
 
 .plants-container .items,
@@ -162,9 +193,15 @@ button:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    /* justify-content: space-between; */
     /* justify-content: space-around; */
     gap: 80px;
     position: relative;
+
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* align-content: center; */
+    /* justify-items: center; */
 }
 
 #plant-card {
@@ -189,6 +226,11 @@ button:hover {
     cursor: grab;
     /* transform: scale(1.05); */
 }
+
+/* #plant-card:active {
+    position: relative;
+    top: 1px;
+} */
 
 #plant-card .img-container {
     height: 300px;
@@ -397,16 +439,16 @@ button:hover {
 }
 
 #wishlist-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    z-index: 10;
     background-color: rgba(255, 255, 255, 0.9);
+    color: black;
     padding: 10px;
     border: 1px solid gray;
     width: 250px;
     height: fit-content;
-    position: fixed;
-    right: 0;
-    top: 100px;
-    z-index: 10;
-    color: black;
 }
 
 #wishlist-sidebar .img-container {
@@ -445,4 +487,24 @@ button:hover {
     padding-left: 15px;
     margin-bottom: 10px;
     gap: 15px;
+}
+
+.emptyWishlist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 300px;
+}
+
+.emptyWishlist .btn {
+    background-color: deepskyblue;
+    color: black;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.emptyWishlist .btn:active {
+    position: relative;
+    top: 1px;
 }

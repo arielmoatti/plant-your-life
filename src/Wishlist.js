@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPlants } from "./actions";
+
 import Card from "./Card";
 
 export default function Wishlist() {
@@ -27,6 +27,14 @@ export default function Wishlist() {
 
     return (
         <>
+            {wishedPlants && wishedPlants.length == 0 && (
+                <div className="emptyWishlist">
+                    <h1>Uh oh! your wish list is empty... {":( "}</h1>
+                    <Link to="/">
+                        <h3 className="btn">take me back</h3>
+                    </Link>
+                </div>
+            )}
             <div id="wishlist-wrapper">
                 {wishedPlants && (
                     <div className="wishlist-container">

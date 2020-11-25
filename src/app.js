@@ -18,23 +18,27 @@ export default function App() {
         <BrowserRouter>
             <div id="app-wrapper">
                 <header>
-                    <Logo />
-                    <div className="title">
-                        <h1>Plant Your Life</h1>
-                        <p>make your home greener</p>
-                    </div>
-                    <nav>
-                        <Link to="/wishlist">
-                            <div className="navWishlist">
-                                <i className="far fa-heart"></i>
-                            </div>
-                        </Link>
-                        <p>login</p>
-                        <p>register</p>
-                    </nav>
-                    {/* <Login />
+                    <div id="headerElem">
+                        <Logo />
+                        <div className="img-container">
+                            <img
+                                src="/header_cover.png"
+                                className="headerImage"
+                            />
+                        </div>
+                        <nav>
+                            <Link to="/wishlist">
+                                <div className="navWishlist">
+                                    <i className="far fa-heart"></i>
+                                </div>
+                            </Link>
+                            <p>login</p>
+                            <p>register</p>
+                        </nav>
+                        {/* <Login />
                         <Registration />
                         <NavBar /> */}
+                    </div>
                 </header>
 
                 <div id="main-section">
