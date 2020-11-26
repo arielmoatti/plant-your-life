@@ -7,6 +7,7 @@ import { getAllPlants } from "./actions";
 import Logo from "./Logo";
 import Homepage from "./Homepage";
 import Wishlist from "./Wishlist";
+import Advisor from "./Advisor";
 
 export default function App() {
     const dispatch = useDispatch();
@@ -50,6 +51,7 @@ export default function App() {
                 <div id="main-section">
                     <Route exact path="/" render={() => <Homepage />} />
                     <Route exact path="/wishlist" render={() => <Wishlist />} />
+                    <Route exact path="/advisor" render={() => <Advisor />} />
                 </div>
             </div>
         </BrowserRouter>

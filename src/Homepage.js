@@ -25,7 +25,9 @@ export default function Homepage() {
                         advisor is here to guide you through your plant-planning
                         journey
                     </p>
-                    <button>start plants advisor</button>
+                    <Link to="/advisor">
+                        <button>start plants advisor</button>
+                    </Link>
                 </div>
                 <div id="all-plants-wrapper">
                     <p>or if you prefer, </p>
