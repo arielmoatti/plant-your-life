@@ -8,6 +8,7 @@ import Logo from "./Logo";
 import Homepage from "./Homepage";
 import Wishlist from "./Wishlist";
 import Advisor from "./Advisor";
+import Filtered from "./Filtered";
 
 export default function App() {
     const dispatch = useDispatch();
@@ -52,6 +53,7 @@ export default function App() {
                     <Route exact path="/" render={() => <Homepage />} />
                     <Route exact path="/wishlist" render={() => <Wishlist />} />
                     <Route exact path="/advisor" render={() => <Advisor />} />
+                    <Route exact path="/results" render={() => <Filtered />} />
                 </div>
             </div>
         </BrowserRouter>

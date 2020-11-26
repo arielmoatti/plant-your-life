@@ -535,3 +535,67 @@ button:hover {
     position: relative;
     top: 1px;
 }
+
+/* ~~~~~~~~~~~~ ADVISOR ~~~~~~~~~~~~~ */
+.advisor-wrapper {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.advisor-container {
+    background-color: var(--lightGrey);
+    height: 300px;
+    width: 800px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+    /* border: 1px solid var(--lightBlue); */
+    filter: drop-shadow(4px 4px 4px #222);
+}
+
+.question-box {
+    border: 1px solid purple;
+    display: flex;
+    height: 80%;
+    justify-content: space-between;
+}
+
+.advisor-left,
+.advisor-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 20px;
+    width: 45%;
+}
+
+.advisor-left {
+    border: 1px solid red;
+}
+
+.advisor-right {
+    border: 1px solid green;
+}
+
+.advisor-btn-container {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-evenly;
+
+    /* align-self: flex-end; */
+}
+
+.advisor-nav {
+    width: 20%;
+}
+
+.advisor-opt-con {
+    border: 1px solid yellow;
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}

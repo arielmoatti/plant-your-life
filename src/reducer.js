@@ -6,6 +6,10 @@ export default (state = {}, action) => {
                     ...action.allPlants.filter((plant) => plant.wished == true),
                 ],
                 allPlants: action.allPlants,
+                // filters: {},
+                //     ...state.filters,
+                //     indoor: "ignore",
+                // },
             }));
 
         case "ADDED_WISHLIST":
@@ -98,6 +102,19 @@ export default (state = {}, action) => {
             return (state = {
                 ...state,
                 wlTriggered: action.wlTriggered,
+            });
+
+        case "FILTERED_RESULTS":
+            return (state = {
+                ...state,
+
+                filters: {
+                    ...state.filters,
+                    indoor: action.indoor,
+                    type: action.plantType,
+                    pet_safe: action.pet,
+                    air_purifier: action.air,
+                },
             });
 
         default:

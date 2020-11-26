@@ -17,10 +17,11 @@ export default function Advisor() {
     return (
         <>
             <div>
-                <h1>this is main advisor</h1>
+                <div className="advisor-wrapper">
+                    <AdvisorJourney />
+                    {/* <Results /> */}
+                </div>
             </div>
-            <p>small description</p>
-            <AdvisorJourney />
         </>
     );
 }

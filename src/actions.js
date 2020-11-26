@@ -63,3 +63,13 @@ export function triggerWishlist() {
         wlTriggered: arg,
     };
 }
+
+export function getFilteredResults(indoor, plantType, pet, air) {
+    return {
+        type: "FILTERED_RESULTS",
+        indoor,
+        plantType,
+        pet,
+        air,
+    };
+}

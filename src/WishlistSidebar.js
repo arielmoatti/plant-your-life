@@ -11,19 +11,49 @@ export default function WishlistSidebar() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
 
     useEffect(() => {
-        wishedPlants &&
-            localStorage.setItem(
-                "saved-wishlist",
-                JSON.stringify(wishedPlants)
-            );
+        let abort;
+        (async () => {
+            try {
+                if (!abort) {
+                    wishedPlants &&
+                        localStorage.setItem(
+                            "saved-wishlist",
+                            JSON.stringify(wishedPlants)
+                        );
+                } else {
+                    console.log("aborted!");
+                }
+            } catch (err) {
+                console.log("error in axios GET /user/search: ", err);
+            }
+        })();
+        // console.log("filters in Journey", filters);
+        return () => {
+            abort = true; //to make sure the results come in the right order, ignoring fast typing
+        };
     }, [wishedPlants]);
 
     useEffect(() => {
         // console.log("wlTriggered", wlTriggered);
-        setSidebarVisible(true);
-        setTimeout(() => {
-            setSidebarVisible(false);
-        }, 2500);
+        let abort;
+        (async () => {
+            try {
+                if (!abort) {
+                    setSidebarVisible(true);
+                    setTimeout(() => {
+                        setSidebarVisible(false);
+                    }, 2500);
+                } else {
+                    console.log("aborted!");
+                }
+            } catch (err) {
+                console.log("error in axios GET /user/search: ", err);
+            }
+        })();
+        // console.log("filters in Journey", filters);
+        return () => {
+            abort = true; //to make sure the results come in the right order, ignoring fast typing
+        };
     }, [wlTriggered]);
 
     return (
