@@ -153,29 +153,74 @@ export default function AdvisorJourney() {
                         <div className="question-box">
                             <div className="advisor-left">
                                 <h2>pet safe? air purifier?</h2>
-                                <div className="advisor-opt-con">
-                                    <p onClick={() => setPet(true)}>cat</p>
-                                    <p onClick={() => setAir(true)}>air</p>
-                                    <p
-                                        onClick={() => {
-                                            setPet("ignore");
-                                            setAir("ignore");
-                                        }}
-                                    >
-                                        reset
-                                    </p>
+                                <div className="advisor-icons-container">
+                                    <img
+                                        onClick={() => setPet(true)}
+                                        id="advisor-icon"
+                                        className={
+                                            pet == true
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/pet_safe.png"
+                                    />
+                                    <img
+                                        onClick={() => setAir(true)}
+                                        id="advisor-icon"
+                                        className={
+                                            air == true
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/air_purifier.png"
+                                    />
                                 </div>
+                                <i
+                                    onClick={() => {
+                                        setPet("ignore");
+                                        setAir("ignore");
+                                    }}
+                                    className="far fa-window-close"
+                                ></i>
                             </div>
                             <div className="advisor-right">
                                 <h2>care intensity</h2>
-                                <div className="advisor-opt-con">
-                                    <p onClick={() => setDiff(1)}>easy</p>
-                                    <p onClick={() => setDiff(2)}>medium</p>
-                                    <p onClick={() => setDiff(3)}>hard</p>
-                                    <p onClick={() => setDiff("ignore")}>
-                                        reset
-                                    </p>
+                                <div className="advisor-icons-container">
+                                    <img
+                                        onClick={() => setDiff(1)}
+                                        id="advisor-icon"
+                                        className={
+                                            diff == 1
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/difficulty_1.png"
+                                    />
+                                    <img
+                                        onClick={() => setDiff(2)}
+                                        id="advisor-icon"
+                                        className={
+                                            diff == 2
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/difficulty_2.png"
+                                    />
+                                    <img
+                                        onClick={() => setDiff(3)}
+                                        id="advisor-icon"
+                                        className={
+                                            diff == 3
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/difficulty_3.png"
+                                    />
                                 </div>
+                                <i
+                                    onClick={() => setDiff("ignore")}
+                                    className="far fa-window-close"
+                                ></i>
                             </div>
                         </div>
 
@@ -204,7 +249,7 @@ export default function AdvisorJourney() {
                 return (
                     <>
                         <div className="results-loader-container">
-                            <h2>Getting the best matches for you...</h2>
+                            <h2>Fetching the best matches for you...</h2>
                             <div className="img-container loading">
                                 <img src="/assets/plant_animation.gif" />
                             </div>
