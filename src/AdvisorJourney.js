@@ -17,8 +17,6 @@ export default function AdvisorJourney() {
 
     useEffect(() => {
         submit();
-
-        // console.log("filters in Journey", filters);
     }, [step, indoor, type, pet, air, diff, submit]);
 
     let submit = () => {
@@ -61,29 +59,83 @@ export default function AdvisorJourney() {
                                     some are blacony-proof. Do you plan to have
                                     it indoors or outdoors?
                                 </h3>
-                                <p>
-                                    {filters.indoor == true
-                                        ? "true"
-                                        : filters.indoor == "ignore"
-                                        ? "ignore"
-                                        : "false"}
-                                </p>
-                                <div className="advisor-opt-con">
-                                    <p onClick={() => setIndoor(true)}>
-                                        indoor
-                                    </p>
-                                    <p onClick={() => setIndoor(false)}>
-                                        outdoor
-                                    </p>
-                                    <p onClick={() => setIndoor("ignore")}>
-                                        reset
-                                    </p>
+                                <div className="advisor-icons-container">
+                                    <img
+                                        onClick={() => setIndoor(true)}
+                                        id="advisor-icon"
+                                        className={
+                                            indoor == true
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/indoor.png"
+                                    />
+                                    <img
+                                        onClick={() => setIndoor(false)}
+                                        id="advisor-icon"
+                                        className={
+                                            indoor == false
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/outdoor.png"
+                                    />
                                 </div>
+                                <i
+                                    onClick={() => setIndoor("ignore")}
+                                    className="far fa-window-close"
+                                ></i>
                             </div>
                             <div className="advisor-right">
                                 <h3>Are you fancy of a specific plant type?</h3>
-                                <p>{filters.type}</p>
-                                <div className="advisor-opt-con">
+                                <div className="advisor-icons-container">
+                                    <img
+                                        onClick={() => setType("Foliage")}
+                                        id="advisor-icon"
+                                        className={
+                                            type == "Foliage"
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/foliage.png"
+                                    />
+                                    <img
+                                        onClick={() => setType("Flowering")}
+                                        id="advisor-icon"
+                                        className={
+                                            type == "Flowering"
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/flowering.png"
+                                    />
+                                    <img
+                                        onClick={() => setType("Succulents")}
+                                        id="advisor-icon"
+                                        className={
+                                            type == "Succulents"
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/succulents.png"
+                                    />
+                                    <img
+                                        onClick={() => setType("Edible")}
+                                        id="advisor-icon"
+                                        className={
+                                            type == "Edible"
+                                                ? "icon-highlight"
+                                                : undefined
+                                        }
+                                        src="/assets/edible.png"
+                                    />
+                                </div>
+                                <i
+                                    onClick={() => setType("ignore")}
+                                    className="far fa-window-close"
+                                ></i>
+
+                                {/* <div className="advisor-opt-con">
                                     <p onClick={() => setType("Foliage")}>
                                         Foliage
                                     </p>
@@ -99,7 +151,7 @@ export default function AdvisorJourney() {
                                     <p onClick={() => setType("ignore")}>
                                         reset
                                     </p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
 

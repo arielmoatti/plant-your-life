@@ -77,7 +77,7 @@ export default function Card({ plant }) {
                     />
                 </div>
                 <div className="card-lower-container">
-                    <h3>{plant.common_name}</h3>
+                    <h2>{plant.common_name}</h2>
                     <p>{plant.botanical_name}</p>
                     <div className="frontInfo">
                         <div className="plant-type">
