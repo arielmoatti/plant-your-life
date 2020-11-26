@@ -18,15 +18,18 @@ export default function Homepage() {
         <>
             <div id="homepage-wrapper">
                 <div className="welcome-bubble">
+                    <h1>
+                        We help you find the best plants
+                        <br />
+                        <br />
+                        for you and your lifestyle.
+                    </h1>
                     <p>
-                        Welcome to Plant Your Life - let us help you find the
-                        plants which best fit your needs - geographic location,
-                        apartment space and personal lifestyle. Our plant
-                        advisor is here to guide you through your plant-planning
-                        journey
+                        Our plant advisor is here to guide you through the
+                        journey.
                     </p>
                     <Link to="/advisor">
-                        <button>start plants advisor</button>
+                        <button>start plant advisor</button>
                     </Link>
                 </div>
                 <div id="all-plants-wrapper">

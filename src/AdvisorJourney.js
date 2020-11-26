@@ -54,11 +54,10 @@ export default function AdvisorJourney() {
                     <div className="advisor-container">
                         <div className="question-box">
                             <div className="advisor-left">
-                                <h3>
-                                    Some plants can very well thrive indoors,
-                                    some are blacony-proof. Do you plan to have
-                                    it indoors or outdoors?
-                                </h3>
+                                <h2>
+                                    Do you plan to have it inside or in your
+                                    balcony?
+                                </h2>
                                 <div className="advisor-icons-container">
                                     <img
                                         onClick={() => setIndoor(true)}
@@ -87,7 +86,7 @@ export default function AdvisorJourney() {
                                 ></i>
                             </div>
                             <div className="advisor-right">
-                                <h3>Are you fancy of a specific plant type?</h3>
+                                <h2>Are you fancy of a specific plant type?</h2>
                                 <div className="advisor-icons-container">
                                     <img
                                         onClick={() => setType("Foliage")}
@@ -176,7 +175,7 @@ export default function AdvisorJourney() {
                     <div className="advisor-container">
                         <div className="question-box">
                             <div className="advisor-left">
-                                <h3>pet safe? air purifier?</h3>
+                                <h2>pet safe? air purifier?</h2>
                                 <div className="advisor-opt-con">
                                     <p onClick={() => setPet(true)}>cat</p>
                                     <p onClick={() => setAir(true)}>air</p>
@@ -191,7 +190,7 @@ export default function AdvisorJourney() {
                                 </div>
                             </div>
                             <div className="advisor-right">
-                                <h3>care intensity</h3>
+                                <h2>care intensity</h2>
                                 <div className="advisor-opt-con">
                                     <p onClick={() => setDiff(1)}>easy</p>
                                     <p onClick={() => setDiff(2)}>medium</p>

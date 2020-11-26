@@ -78,9 +78,9 @@ header {
 
 .logo {
     position: absolute;
-    top: 40px;
+    top: 14px;
     margin: 30px;
-    height: 70px;
+    height: 120px;
     /* -webkit-filter: drop-shadow(5px 5px 5px #222); */
     filter: drop-shadow(5px 5px 3px #222);
 }
@@ -92,7 +92,7 @@ header {
     right: 0px;
     background-color: var(--deepGreen);
     color: var(--beige);
-    padding: 5px 15px;
+    padding: 10px 15px 5px 15px;
     display: flex;
     align-items: center;
     align-content: space-around;
@@ -156,9 +156,14 @@ button:hover {
     filter: drop-shadow(5px 5px 6px #222);
 }
 
+.welcome-bubble h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
 .welcome-bubble p {
     font-size: 25px;
-    /* padding: 10px; */
+    text-align: center;
 }
 
 #all-plants-wrapper,
@@ -571,6 +576,8 @@ button:hover {
 .advisor-container {
     background-color: var(--lightPink);
     /* border: 3px solid var(--muteLime); */
+    background-image: url("/advisor_bg.png");
+    /* opacity: 0.3; */
     height: 500px;
     width: 1100px;
     padding: 30px;
@@ -590,25 +597,13 @@ button:hover {
 
 .advisor-left,
 .advisor-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5px 20px;
-    width: 45%;
-}
-
-.advisor-left,
-.advisor-right {
     /* border: 1px solid red; */
+    width: 45%;
     display: grid;
     grid-template-rows: 3fr 3fr 1fr;
     justify-items: center;
     text-align: center;
     gap: 20px;
-
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
     padding: 20px;
 }
 
@@ -627,7 +622,9 @@ button:hover {
 .advisor-btn-container {
     /* border: 1px solid blue; */
     display: flex;
-    justify-content: space-evenly;
+    /* gap: 80px; */
+    padding: 30px 0px;
+    justify-content: space-around;
 
     /* align-self: flex-end; */
 }
@@ -643,7 +640,9 @@ button:hover {
     /* align-self: flex-end; */
 }
 .advisor-nav {
-    width: 20%;
+    min-width: 150px;
+    padding: 15px 40px;
+    /* margin: 0px 250px; */
 }
 
 .results > .advisor-nav {
@@ -688,6 +687,7 @@ button:hover {
     opacity: 0.3;
     cursor: pointer;
     transition: 300ms;
+    margin-top: 20px;
 }
 
 .question-box .far:hover {
