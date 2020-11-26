@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilteredResults } from "./actions";
+import Filtered from "./Filtered";
 
 export default function AdvisorJourney() {
     const dispatch = useDispatch();
@@ -12,28 +13,16 @@ export default function AdvisorJourney() {
     let [type, setType] = useState("ignore");
     let [pet, setPet] = useState("ignore");
     let [air, setAir] = useState("ignore");
+    let [diff, setDiff] = useState("ignore");
 
     useEffect(() => {
-        let abort;
-        (async () => {
-            try {
-                if (!abort) {
-                    submit();
-                } else {
-                    console.log("aborted!");
-                }
-            } catch (err) {
-                console.log("error in axios GET /user/search: ", err);
-            }
-        })();
+        submit();
+
         // console.log("filters in Journey", filters);
-        return () => {
-            abort = true; //to make sure the results come in the right order, ignoring fast typing
-        };
-    }, [step, indoor, type, pet, air, submit]);
+    }, [step, indoor, type, pet, air, diff, submit]);
 
     let submit = () => {
-        dispatch(getFilteredResults(indoor, type, pet, air));
+        dispatch(getFilteredResults(indoor, type, pet, air, diff));
     };
 
     let getCurrentDisplay = () => {
@@ -151,6 +140,14 @@ export default function AdvisorJourney() {
                             </div>
                             <div className="advisor-right">
                                 <h3>care intensity</h3>
+                                <div className="advisor-opt-con">
+                                    <p onClick={() => setDiff(1)}>easy</p>
+                                    <p onClick={() => setDiff(2)}>medium</p>
+                                    <p onClick={() => setDiff(3)}>hard</p>
+                                    <p onClick={() => setDiff("ignore")}>
+                                        reset
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
@@ -161,11 +158,45 @@ export default function AdvisorJourney() {
                             >
                                 back
                             </button>
-                            <Link to="/results">
+                            <button
+                                className="advisor-nav"
+                                onClick={() => {
+                                    setIndoor("ignore");
+                                    setType("ignore");
+                                    setPet("ignore");
+                                    setAir("ignore");
+                                    setDiff("ignore");
+                                    setStep(4);
+                                }}
+                            >
+                                show results!
+                            </button>
+
+                            {/* <Link to="/results">
                                 <h1 className="advisor-nav">results</h1>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
+                );
+            case 4:
+                return (
+                    <>
+                        <div className="advisor-btn-container results">
+                            <button
+                                className="advisor-nav"
+                                onClick={() => setStep(3)}
+                            >
+                                back
+                            </button>
+                            <button
+                                className="advisor-nav"
+                                onClick={() => setStep(1)}
+                            >
+                                start over
+                            </button>
+                        </div>
+                        <Filtered />
+                    </>
                 );
         }
     };

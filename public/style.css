@@ -504,8 +504,11 @@ button:hover {
     opacity: 0.5;
     left: 100%;
     /* transition: 1700ms ease; */
-    transition: transform 1700ms ease, opacity 2000ms ease-in;
+    /* transition: transform 1700ms ease 3s; */
+    transition: transform 1700ms ease 1.5s, opacity 2000ms ease-in 1.5s;
     /* transition: 100ms ease-out; */
+    /* transition: 100ms ease-out; */
+    /* transition-delay:  */
 }
 
 #back-card-top {
@@ -540,7 +543,9 @@ button:hover {
 .advisor-wrapper {
     margin-top: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .advisor-container {
@@ -587,8 +592,24 @@ button:hover {
     /* align-self: flex-end; */
 }
 
+.advisor-btn-container.results {
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    /* align-items: flex-start; */
+    /* align-content: flex-start; */
+
+    /* align-self: flex-end; */
+}
 .advisor-nav {
     width: 20%;
+}
+
+.results > .advisor-nav {
+    width: 100px;
+    /* height: 50px; */
+    /* color: red; */
 }
 
 .advisor-opt-con {
@@ -598,4 +619,9 @@ button:hover {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+}
+
+.results-header {
+    padding-top: 30px;
+    text-align: center;
 }

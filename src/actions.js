@@ -64,12 +64,13 @@ export function triggerWishlist() {
     };
 }
 
-export function getFilteredResults(indoor, plantType, pet, air) {
+export function getFilteredResults(indoor, plantType, pet, air, diff) {
     return {
         type: "FILTERED_RESULTS",
         indoor,
         plantType,
         pet,
         air,
+        diff,
     };
 }

@@ -114,6 +114,7 @@ export default (state = {}, action) => {
                     type: action.plantType,
                     pet_safe: action.pet,
                     air_purifier: action.air,
+                    difficulty: action.diff,
                 },
             });
 

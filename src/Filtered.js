@@ -34,58 +34,58 @@ export default function Filtered() {
             filteredPlants = plants.filter((plant) => {
                 return plant.indoor == filters.indoor;
             });
-        } else {
-            console.log("indoor is ignored!");
         }
 
         if (filters.type != "ignore") {
             filteredPlants = filteredPlants.filter((plant) => {
                 return plant.type == filters.type;
             });
-        } else {
-            console.log("type is ignored!");
         }
 
         if (filters.pet_safe != "ignore") {
             filteredPlants = filteredPlants.filter((plant) => {
                 return plant.pet_safe == filters.pet_safe;
             });
-        } else {
-            console.log("pet_safe is ignored!");
         }
 
         if (filters.air_purifier != "ignore") {
             filteredPlants = filteredPlants.filter((plant) => {
                 return plant.air_purifier == filters.air_purifier;
             });
-        } else {
-            console.log("air_purifier is ignored!");
+        }
+
+        if (filters.difficulty != "ignore") {
+            filteredPlants = filteredPlants.filter((plant) => {
+                return plant.difficulty == filters.difficulty;
+            });
         }
     }
 
     return (
         <>
-            <div>
-                <h1>
-                    {filteredPlants && filteredPlants.length > 0
-                        ? `we have found ${filteredPlants.length} matching results!`
-                        : "no results found... start over or go back"}
-                </h1>
-                <Link to="/advisor">
-                    <button>start over</button>
-                </Link>
-            </div>
+            <div className="results-container">
+                <div className="results-header">
+                    <h2>
+                        {filteredPlants && filteredPlants.length > 0
+                            ? `We have found ${filteredPlants.length} matching results!`
+                            : "Oops! no results found... you could start over or go back"}
+                    </h2>
+                    {/* <Link to="/advisor">
+                        <button>start over</button>
+                    </Link> */}
+                </div>
 
-            <div id="plantsList-wrapper">
-                {filteredPlants && (
-                    <div className="plants-container">
-                        <div className="items">
-                            {filteredPlants.map((plant) => (
-                                <Card key={plant.id} plant={plant} />
-                            ))}
+                <div id="plantsList-wrapper">
+                    {filteredPlants && (
+                        <div className="plants-container">
+                            <div className="items">
+                                {filteredPlants.map((plant) => (
+                                    <Card key={plant.id} plant={plant} />
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
             <WishlistSidebar />
         </>

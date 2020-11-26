@@ -19,7 +19,6 @@ export default function Advisor() {
             <div>
                 <div className="advisor-wrapper">
                     <AdvisorJourney />
-                    {/* <Results /> */}
                 </div>
             </div>
         </>

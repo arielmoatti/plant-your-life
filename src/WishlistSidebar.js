@@ -20,9 +20,10 @@ export default function WishlistSidebar() {
                             "saved-wishlist",
                             JSON.stringify(wishedPlants)
                         );
-                } else {
-                    console.log("aborted!");
                 }
+                // else {
+                //     console.log("aborted!");
+                // }
             } catch (err) {
                 console.log("error in axios GET /user/search: ", err);
             }
@@ -36,23 +37,23 @@ export default function WishlistSidebar() {
     useEffect(() => {
         // console.log("wlTriggered", wlTriggered);
         let abort;
-        (async () => {
-            try {
-                if (!abort) {
-                    setSidebarVisible(true);
-                    setTimeout(() => {
-                        setSidebarVisible(false);
-                    }, 2500);
-                } else {
-                    console.log("aborted!");
-                }
-            } catch (err) {
-                console.log("error in axios GET /user/search: ", err);
-            }
-        })();
+        let timeOut;
+
+        if (!abort) {
+            setSidebarVisible(true);
+            timeOut = setTimeout(() => {
+                setSidebarVisible(false);
+                // console.log("passed under cleanup");
+            }, 500);
+        } else {
+            console.log("aborted!");
+        }
+
         // console.log("filters in Journey", filters);
         return () => {
             abort = true; //to make sure the results come in the right order, ignoring fast typing
+            clearTimeout(timeOut);
+            // console.log("cleanUP!");
         };
     }, [wlTriggered]);
 
