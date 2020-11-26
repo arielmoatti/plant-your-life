@@ -161,24 +161,29 @@ export default function AdvisorJourney() {
                             <button
                                 className="advisor-nav"
                                 onClick={() => {
-                                    setIndoor("ignore");
-                                    setType("ignore");
-                                    setPet("ignore");
-                                    setAir("ignore");
-                                    setDiff("ignore");
                                     setStep(4);
+                                    setTimeout(() => {
+                                        setStep(5);
+                                    }, 3500);
                                 }}
                             >
                                 show results!
                             </button>
-
-                            {/* <Link to="/results">
-                                <h1 className="advisor-nav">results</h1>
-                            </Link> */}
                         </div>
                     </div>
                 );
             case 4:
+                return (
+                    <>
+                        <div className="results-loader-container">
+                            <h2>Getting the best matches for you...</h2>
+                            <div className="img-container loading">
+                                <img src="/assets/plant_animation.gif" />
+                            </div>
+                        </div>
+                    </>
+                );
+            case 5:
                 return (
                     <>
                         <div className="advisor-btn-container results">
@@ -190,7 +195,14 @@ export default function AdvisorJourney() {
                             </button>
                             <button
                                 className="advisor-nav"
-                                onClick={() => setStep(1)}
+                                onClick={() => {
+                                    setIndoor("ignore");
+                                    setType("ignore");
+                                    setPet("ignore");
+                                    setAir("ignore");
+                                    setDiff("ignore");
+                                    setStep(1);
+                                }}
                             >
                                 start over
                             </button>

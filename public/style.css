@@ -1,11 +1,14 @@
 :root {
-    --lightBlue: #2274a5;
-    --darkBlue: #053276;
-    --darkGrey: #3d3829;
-    --lightGrey: #738087;
-    --beige: #e3e3ca;
-    --lilac: #8f95d3;
-    --green: #447604;
+    --beige: #ebe5d8;
+    --redBrown: #7b4247;
+    --lightPurple: #9f2d5e;
+    --bordo: #642646;
+    --darkPurple: #3d2033;
+    --yellowGreen: #c0cb4d;
+    --lime: #95b811;
+    --leafGreen: #2f691c;
+    --deepGreen: #2f491b;
+    --darkGreen: #101e13;
 }
 
 * {
@@ -84,14 +87,15 @@ header {
     /* height: 100%; */
     top: 0px;
     right: 0px;
-    background-color: var(--darkGrey);
+    background-color: var(--deepGreen);
     color: var(--beige);
     padding: 5px 15px;
     display: flex;
     align-items: center;
     align-content: space-around;
     gap: 20px;
-    z-index: 40;
+    z-index: 8;
+    filter: drop-shadow(-5px 1px 3px #222);
     /* height: fit-content; */
 }
 
@@ -109,16 +113,16 @@ button {
     font-family: "Nunito", sans-serif;
     font-size: 18px;
     padding: 0.1rem 0.5rem;
-    background-color: #22241f;
+    background-color: var(--darkGreen);
     align-self: center;
-    color: #ccc5b9;
+    color: var(--beige);
     border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #ccc5b9;
-    color: #22241f;
+    background-color: var(--beige);
+    color: var(--darkGreen);
     transition: 400ms ease-in-out;
 }
 
@@ -168,7 +172,7 @@ button:hover {
 #wishlist-wrapper {
     /* background-color: var(--lightGrey); */
     /* text-shadow: 3px 3px 5px #000000; */
-    color: var(--darkBlue);
+    /* color: var(--darkPurple); */
     /* border: 1px solid green; */
     padding: 30px 0px 30px 100px;
     display: flex;
@@ -210,7 +214,7 @@ button:hover {
     width: 322px;
     /* padding: 10px; */
     background-color: whitesmoke;
-    border: 1px solid var(--lightGrey);
+    border: 1px solid var(--redBrown);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -237,7 +241,7 @@ button:hover {
     width: 300px;
     display: flex;
     margin-bottom: 10px;
-    border: 2px solid var(--lilac);
+    border: 1px solid var(--darkGreen);
     border-radius: 30px;
     overflow: hidden;
     justify-content: center;
@@ -291,11 +295,11 @@ button:hover {
 }
 
 .wishIconActive {
-    color: darkred;
+    color: var(--lightPurple);
 }
 
 .wishIconInactive {
-    color: whitesmoke;
+    color: var(--beige);
 }
 
 .card-lower-container {
@@ -310,7 +314,7 @@ button:hover {
     position: absolute;
     top: 10px;
     left: 10px;
-    color: var(--lilac);
+
     transition: 0.6s;
     /* backface-visibility: hidden; */
     /* transform-style: preserve-3d;
@@ -318,12 +322,14 @@ button:hover {
 }
 
 #frontSide {
+    color: var(--deepGreen);
     /* z-index: 1; */
     /* filter: alpha(opacity=100); */
     /* opacity: 1; */
 }
 
 #backSide {
+    color: var(--redBrown);
     /* border: 1px solid green; */
     /* background-color: yellow; */
     height: 418px;
@@ -444,7 +450,7 @@ button:hover {
     top: 50px;
     z-index: 10;
     background-color: whitesmoke;
-    color: black;
+    color: var(--darkPurple);
     padding: 10px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -460,7 +466,7 @@ button:hover {
     max-height: 50px;
     max-width: 50px;
     display: flex;
-    border: 2px solid var(--lilac);
+    border: 2px solid var(--deepGreen);
     border-radius: 50%;
     overflow: hidden;
     justify-content: center;
@@ -470,7 +476,7 @@ button:hover {
     max-height: 50px;
     max-width: 50px;
     display: flex;
-    border: 2px solid var(--lilac);
+    border: 2px solid var(--redBrown);
     border-radius: 5px;
     overflow: hidden;
     justify-content: center;
@@ -525,13 +531,20 @@ button:hover {
     justify-content: space-evenly;
     align-items: center;
     height: 300px;
+    color: var(--darkPurple);
 }
 
 .emptyWishlist .btn {
-    background-color: deepskyblue;
-    color: black;
-    padding: 30px;
+    background-color: var(--lime);
+    color: var(--redBrown);
+    padding: 5px 15px;
     border-radius: 20px;
+    transition: 400ms;
+}
+
+.emptyWishlist .btn:hover {
+    background-color: var(--redBrown);
+    color: var(--lime);
 }
 
 .emptyWishlist .btn:active {
@@ -549,7 +562,7 @@ button:hover {
 }
 
 .advisor-container {
-    background-color: var(--lightGrey);
+    background-color: var(--deepGreen);
     height: 300px;
     width: 800px;
     padding: 30px;
@@ -623,5 +636,15 @@ button:hover {
 
 .results-header {
     padding-top: 30px;
+    text-align: center;
+}
+.img-container.loading {
+    height: 500px;
+    overflow: hidden;
+    /* border: 5px solid red; */
+}
+
+.results-loader-container h2 {
+    padding-bottom: 20px;
     text-align: center;
 }
