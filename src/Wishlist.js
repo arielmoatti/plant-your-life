@@ -30,8 +30,9 @@ export default function Wishlist() {
             {wishedPlants && wishedPlants.length == 0 && (
                 <div className="emptyWishlist">
                     <h1>Uh oh! your wish list is empty... {":( "}</h1>
+                    <h3 className="btn"> take me back</h3>
                     <Link to="/">
-                        <h3 className="btn">take me back</h3>
+                        <i className="fas fa-chevron-circle-left wishlist-backbtn"></i>
                     </Link>
                 </div>
             )}

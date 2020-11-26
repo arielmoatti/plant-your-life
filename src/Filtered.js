@@ -68,7 +68,7 @@ export default function Filtered() {
                     <h2>
                         {filteredPlants && filteredPlants.length > 0
                             ? `We have found ${filteredPlants.length} matching results!`
-                            : "Oops! no results found... you could start over or go back"}
+                            : "Oops! no results found... go back or start over"}
                     </h2>
                     {/* <Link to="/advisor">
                         <button>start over</button>

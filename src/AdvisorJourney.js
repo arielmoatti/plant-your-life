@@ -40,12 +40,10 @@ export default function AdvisorJourney() {
                         </div>
 
                         <div className="advisor-btn-container">
-                            <button
-                                className="advisor-nav"
+                            <i
                                 onClick={() => setStep(2)}
-                            >
-                                continue
-                            </button>
+                                className="fas fa-chevron-circle-right advisor-nav"
+                            ></i>
                         </div>
                     </div>
                 );
@@ -133,40 +131,19 @@ export default function AdvisorJourney() {
                                     onClick={() => setType("ignore")}
                                     className="far fa-window-close"
                                 ></i>
-
-                                {/* <div className="advisor-opt-con">
-                                    <p onClick={() => setType("Foliage")}>
-                                        Foliage
-                                    </p>
-                                    <p onClick={() => setType("Flowering")}>
-                                        Flowering
-                                    </p>
-                                    <p onClick={() => setType("Succulents")}>
-                                        Succulents
-                                    </p>
-                                    <p onClick={() => setType("Edible")}>
-                                        Edible
-                                    </p>
-                                    <p onClick={() => setType("ignore")}>
-                                        reset
-                                    </p>
-                                </div> */}
                             </div>
                         </div>
 
                         <div className="advisor-btn-container">
-                            <button
-                                className="advisor-nav"
+                            <i
                                 onClick={() => setStep(1)}
-                            >
-                                back
-                            </button>
-                            <button
-                                className="advisor-nav"
+                                className="fas fa-chevron-circle-left advisor-nav"
+                            ></i>
+
+                            <i
                                 onClick={() => setStep(3)}
-                            >
-                                continue
-                            </button>
+                                className="fas fa-chevron-circle-right advisor-nav"
+                            ></i>
                         </div>
                     </div>
                 );
@@ -203,23 +180,23 @@ export default function AdvisorJourney() {
                         </div>
 
                         <div className="advisor-btn-container">
-                            <button
-                                className="advisor-nav"
+                            <i
                                 onClick={() => setStep(2)}
-                            >
-                                back
-                            </button>
-                            <button
-                                className="advisor-nav"
+                                className="fas fa-chevron-circle-left advisor-nav"
+                            ></i>
+
+                            <div
                                 onClick={() => {
                                     setStep(4);
                                     setTimeout(() => {
                                         setStep(5);
                                     }, 3500);
                                 }}
+                                className="show-results"
                             >
-                                show results!
-                            </button>
+                                <p>show results </p>
+                                <i className="fas fa-seedling advisor-nav"></i>
+                            </div>
                         </div>
                     </div>
                 );
@@ -238,14 +215,12 @@ export default function AdvisorJourney() {
                 return (
                     <>
                         <div className="advisor-btn-container results">
-                            <button
-                                className="advisor-nav"
+                            <i
                                 onClick={() => setStep(3)}
-                            >
-                                back
-                            </button>
-                            <button
-                                className="advisor-nav"
+                                className="fas fa-chevron-circle-left advisor-nav"
+                            ></i>
+
+                            <i
                                 onClick={() => {
                                     setIndoor("ignore");
                                     setType("ignore");
@@ -254,9 +229,8 @@ export default function AdvisorJourney() {
                                     setDiff("ignore");
                                     setStep(1);
                                 }}
-                            >
-                                start over
-                            </button>
+                                className="fas fa-redo advisor-nav"
+                            ></i>
                         </div>
                         <Filtered />
                     </>

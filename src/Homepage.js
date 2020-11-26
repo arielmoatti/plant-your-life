@@ -24,24 +24,31 @@ export default function Homepage() {
                         <br />
                         for you and your lifestyle.
                     </h1>
-                    <p>
-                        Our plant advisor is here to guide you through the
-                        journey.
-                    </p>
+                    <p>Our plant advisor will guide you through the journey.</p>
                     <Link to="/advisor">
-                        <button>start plant advisor</button>
+                        <button className="homepage-btn">
+                            start plant advisor
+                        </button>
                     </Link>
                 </div>
                 <div id="all-plants-wrapper">
-                    <p>or if you prefer, </p>
-                    <button
+                    <p>or see all plants</p>
+                    {/* <button
                         className="btnShowAllPlants"
                         onClick={() => toggleAllPlants()}
                     >
                         {!allPlantsToggled
                             ? "see all plants"
                             : "hide full list"}
-                    </button>
+                    </button> */}
+                    <i
+                        className={
+                            !allPlantsToggled
+                                ? "fas fa-chevron-circle-down arrow"
+                                : "fas fa-chevron-circle-up arrow"
+                        }
+                        onClick={() => toggleAllPlants()}
+                    ></i>
 
                     {allPlantsToggled && <AllPlants />}
                     <WishlistSidebar />
