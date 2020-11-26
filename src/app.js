@@ -10,6 +10,8 @@ import Wishlist from "./Wishlist";
 
 export default function App() {
     const dispatch = useDispatch();
+    let wishedPlants = useSelector((state) => state.wishlist);
+
     useEffect(() => {
         dispatch(getAllPlants());
     }, []);
@@ -29,7 +31,11 @@ export default function App() {
                         <nav>
                             <Link to="/wishlist">
                                 <div className="navWishlist">
-                                    <i className="far fa-heart"></i>
+                                    {wishedPlants && wishedPlants.length > 0 ? (
+                                        <i className="fas fa-heart wishIconActive"></i>
+                                    ) : (
+                                        <i className="far fa-heart"></i>
+                                    )}
                                 </div>
                             </Link>
                             <p>login</p>

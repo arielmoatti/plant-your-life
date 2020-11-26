@@ -94,6 +94,12 @@ export default (state = {}, action) => {
                 }),
             });
 
+        case "TRIGGER_WISHLIST":
+            return (state = {
+                ...state,
+                wlTriggered: action.wlTriggered,
+            });
+
         default:
             return state;
     }

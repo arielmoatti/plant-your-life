@@ -86,7 +86,7 @@ header {
     right: 0px;
     background-color: var(--darkGrey);
     color: var(--beige);
-    padding: 5px;
+    padding: 5px 15px;
     display: flex;
     align-items: center;
     align-content: space-around;
@@ -443,12 +443,14 @@ button:hover {
     right: 0;
     top: 50px;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: whitesmoke;
     color: black;
     padding: 10px;
     border: 1px solid gray;
+    border-radius: 5px;
     width: 250px;
     height: fit-content;
+    filter: drop-shadow(2px 2px 10px #222);
 }
 
 #wishlist-sidebar .img-container {
@@ -479,6 +481,18 @@ button:hover {
     justify-items: center;
     margin-bottom: 10px;
     gap: 15px;
+}
+
+.sidebar-visible {
+    visibility: visible;
+    opacity: 0.95;
+    transition: 500ms;
+}
+
+.sidebar-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: 300ms;
 }
 
 #back-card-top {

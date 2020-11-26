@@ -75,3 +75,16 @@ export async function showFront(plantId) {
         console.log(" ", err);
     }
 }
+
+export async function triggerWishlist(arg) {
+    try {
+        // console.log("action: triggerWishlist ");
+        // console.log("arg", arg);
+        return {
+            type: "TRIGGER_WISHLIST",
+            wlTriggered: arg,
+        };
+    } catch (err) {
+        console.log(" ", err);
+    }
+}

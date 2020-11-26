@@ -7,17 +7,36 @@ import {
     removeFromWishlist,
     showBack,
     showFront,
+    triggerWishlist,
 } from "./actions";
 
 export default function Card({ plant }) {
     const dispatch = useDispatch();
     const [wishIconHover, setWishIconHover] = useState(false);
+    const [toggleTrigger, setToggleTrigger] = useState(false);
 
     let toggleWishlistIcon = (e, plant) => {
         e.stopPropagation();
+
+        console.log("toggleTrigger before IF STATEMENT", toggleTrigger);
+        if (toggleTrigger) {
+            setToggleTrigger(false);
+            console.log("inside IF");
+            setTimeout(() => {
+                console.log("toggleTrigger after IF", toggleTrigger);
+            }, 500);
+        } else {
+            setToggleTrigger(true);
+            console.log("inside ELSE");
+            setTimeout(() => {
+                console.log("toggleTrigger after ELSE", toggleTrigger);
+            }, 500);
+        }
+        dispatch(triggerWishlist(toggleTrigger));
+
         if (!plant.wished) {
             dispatch(addToWishlist(plant));
-            setWishIconHover(false);
+            setWishIconHover(false); //prevents changing to x after un-wish
         } else {
             dispatch(removeFromWishlist(plant));
         }
