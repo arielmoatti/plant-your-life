@@ -13,26 +13,11 @@ import {
 export default function Card({ plant }) {
     const dispatch = useDispatch();
     const [wishIconHover, setWishIconHover] = useState(false);
-    const [toggleTrigger, setToggleTrigger] = useState(false);
 
     let toggleWishlistIcon = (e, plant) => {
         e.stopPropagation();
 
-        console.log("toggleTrigger before IF STATEMENT", toggleTrigger);
-        if (toggleTrigger) {
-            setToggleTrigger(false);
-            console.log("inside IF");
-            setTimeout(() => {
-                console.log("toggleTrigger after IF", toggleTrigger);
-            }, 500);
-        } else {
-            setToggleTrigger(true);
-            console.log("inside ELSE");
-            setTimeout(() => {
-                console.log("toggleTrigger after ELSE", toggleTrigger);
-            }, 500);
-        }
-        dispatch(triggerWishlist(toggleTrigger));
+        dispatch(triggerWishlist()); //to make sidebar disappear
 
         if (!plant.wished) {
             dispatch(addToWishlist(plant));

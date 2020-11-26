@@ -16,17 +16,14 @@ export default function WishlistSidebar() {
                 "saved-wishlist",
                 JSON.stringify(wishedPlants)
             );
-        // console.log("updating wishlist", wishedPlants);
-        // setSidebarVisible(false);
-        // console.log("sidebarVisible", sidebarVisible);
-        // setTimeout(() => {
-        //     setSidebarVisible(true);
-        //     console.log("sidebarVisible", sidebarVisible);
-        // }, 1500);
     }, [wishedPlants]);
 
     useEffect(() => {
-        console.log("wlTriggered", wlTriggered);
+        // console.log("wlTriggered", wlTriggered);
+        setSidebarVisible(true);
+        setTimeout(() => {
+            setSidebarVisible(false);
+        }, 2500);
     }, [wlTriggered]);
 
     return (
@@ -35,7 +32,9 @@ export default function WishlistSidebar() {
                 id="wishlist-sidebar"
                 className={
                     wishedPlants && wishedPlants.length > 0
-                        ? "sidebar-visible"
+                        ? sidebarVisible
+                            ? "sidebar-visible"
+                            : "sidebar-hidden"
                         : "sidebar-hidden"
                 }
             >

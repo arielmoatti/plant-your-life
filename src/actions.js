@@ -2,7 +2,6 @@ import axios from "./axios";
 import { useSelector } from "react-redux";
 
 export async function getAllPlants() {
-    // let wishedPlants = useSelector((state) => state.wishlist);
     try {
         const { data } = await axios.get("/api/plants");
         const ls = localStorage.getItem("saved-wishlist");
@@ -27,64 +26,40 @@ export async function getAllPlants() {
     }
 }
 
-export async function addToWishlist(plant) {
-    try {
-        // console.log("action: add to wishlist ");
-        return {
-            type: "ADDED_WISHLIST",
-            // id: id,
-            plant,
-        };
-    } catch (err) {
-        console.log(" ", err);
-    }
+export function addToWishlist(plant) {
+    return {
+        type: "ADDED_WISHLIST",
+
+        plant,
+    };
 }
 
-export async function removeFromWishlist(plant) {
-    try {
-        // console.log("action: remove from wishlist ");
-        return {
-            type: "REMOVED_WISHLIST",
-            plant,
-        };
-    } catch (err) {
-        console.log(" ", err);
-    }
+export function removeFromWishlist(plant) {
+    return {
+        type: "REMOVED_WISHLIST",
+        plant,
+    };
 }
 
-export async function showBack(plantId) {
-    try {
-        // console.log("action: flag flipped to back");
-        return {
-            type: "FLIP_BACK",
-            id: plantId,
-        };
-    } catch (err) {
-        console.log(" ", err);
-    }
+export function showBack(plantId) {
+    return {
+        type: "FLIP_BACK",
+        id: plantId,
+    };
 }
 
-export async function showFront(plantId) {
-    try {
-        // console.log("action: flag flipped to front");
-        return {
-            type: "FLIP_FRONT",
-            id: plantId,
-        };
-    } catch (err) {
-        console.log(" ", err);
-    }
+export function showFront(plantId) {
+    return {
+        type: "FLIP_FRONT",
+        id: plantId,
+    };
 }
 
-export async function triggerWishlist(arg) {
-    try {
-        // console.log("action: triggerWishlist ");
-        // console.log("arg", arg);
-        return {
-            type: "TRIGGER_WISHLIST",
-            wlTriggered: arg,
-        };
-    } catch (err) {
-        console.log(" ", err);
-    }
+let arg = true;
+export function triggerWishlist() {
+    arg = !arg;
+    return {
+        type: "TRIGGER_WISHLIST",
+        wlTriggered: arg,
+    };
 }
