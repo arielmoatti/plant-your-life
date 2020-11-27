@@ -36,6 +36,7 @@ export default function Wishlist() {
                     </Link>
                 </div>
             )}
+
             <div id="wishlist-wrapper">
                 {wishedPlants && (
                     <div className="wishlist-container">

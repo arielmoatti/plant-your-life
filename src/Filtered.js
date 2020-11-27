@@ -63,15 +63,14 @@ export default function Filtered() {
 
     return (
         <>
+            <div className="results-header">
+                <h2>
+                    {filteredPlants && filteredPlants.length > 0
+                        ? `We have found ${filteredPlants.length} matching results!`
+                        : "Oops! no results found... go back or start over"}
+                </h2>
+            </div>
             <div className="results-container">
-                <div className="results-header">
-                    <h2>
-                        {filteredPlants && filteredPlants.length > 0
-                            ? `We have found ${filteredPlants.length} matching results!`
-                            : "Oops! no results found... go back or start over"}
-                    </h2>
-                </div>
-
                 <div id="plantsList-wrapper">
                     {filteredPlants && (
                         <div className="plants-container">
