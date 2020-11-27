@@ -67,7 +67,7 @@ VALUES
 ),
 ('Peruvian Apple Cactus ','Cereus peruvianus','https://www.houseplantsexpert.com/image-files/peruvian-apple-cactus-close-up.jpg','Succulents',TRUE,FALSE,1,3,TRUE,'16-24','120',1
 ),
-('Basil','Basilikum','https://bilder.t-online.de/b/85/78/77/44/id_85787744/610/tid_da/basilikumpflanze-basilikum-fuehlt-sich-an-warmen-sonnigen-plaetzen-besonders-wohl-braucht-aber-viel-wasser-.jpg','Edible',TRUE,FALSE,3,3,FALSE,'10-25','30',2
+('Sweet Basil','Ocimum basilicum','https://bilder.t-online.de/b/85/78/77/44/id_85787744/610/tid_da/basilikumpflanze-basilikum-fuehlt-sich-an-warmen-sonnigen-plaetzen-besonders-wohl-braucht-aber-viel-wasser-.jpg','Edible',TRUE,FALSE,3,3,FALSE,'10-25','30',2
 ),
 ('Rosemary','Rosmarinus Officinalis','https://www.flowerpower.com.au/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/image/3274446652/rosemary.jpg','Edible',TRUE,FALSE,2,3,FALSE,'5-25','150',2
 ),

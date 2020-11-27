@@ -510,8 +510,51 @@ button:hover {
     text-align: center;
 }
 
+.advisor-left h2,
+.advisor-right h2 {
+    line-height: 150%;
+    padding-top: 30px;
+}
+
 .advisor-middle {
     width: 100%;
+    align-items: center;
+    padding: 20px 50px 0px 50px;
+}
+
+.advisor-middle h1 {
+    font-size: 45px;
+}
+
+.advisor-middle h2 {
+    margin-top: 20px;
+    line-height: 150%;
+}
+
+.location-container {
+    /* border: 1px solid green; */
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.location-box {
+    /* border: 1px solid red; */
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.location-box select {
+    font-family: "Nunito", sans-serif;
+    font-size: 20px;
+    background-color: rgba(245, 245, 245, 0.8);
+    cursor: pointer;
+}
+
+.fa-map-marker-alt {
+    font-size: 90px;
 }
 
 .advisor-icons-container {
