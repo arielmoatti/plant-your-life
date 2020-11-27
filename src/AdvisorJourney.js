@@ -35,7 +35,13 @@ export default function AdvisorJourney() {
                         <div className="question-box">
                             <div className="advisor-middle">
                                 <div>
-                                    <h2>Let's begin with your location</h2>
+                                    <h1>Welcome to the plant advisor!</h1>
+                                    <h2>
+                                        Let's begin by chosing your location.
+                                    </h2>
+                                    <div>
+                                        <i className="fas fa-map-marked-alt"></i>
+                                    </div>
                                     <h3>
                                         Seems like you're in Berlin, Germany
                                     </h3>
