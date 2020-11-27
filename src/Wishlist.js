@@ -5,7 +5,7 @@ import { getAllPlants } from "./actions";
 
 import Card from "./Card";
 
-export default function Wishlist() {
+export default function Wishlist({ methodInApp }) {
     const dispatch = useDispatch();
     let wishedPlants = useSelector((state) => state.wishlist);
 
@@ -40,7 +40,7 @@ export default function Wishlist() {
                 <div className="wishlist-header">
                     <h1>My plants wish list</h1>
 
-                    <div className="share">
+                    <div onClick={methodInApp} className="share">
                         <i className="fab fa-whatsapp"></i>
                         <i className="fab fa-pinterest-p"></i>
                         <i className="far fa-envelope"></i>

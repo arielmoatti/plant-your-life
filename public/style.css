@@ -687,3 +687,35 @@ button:hover {
 .show-results {
     align-self: end;
 }
+
+/* ~~~~~~~~~~~~ MODAL ~~~~~~~~~~~~~~ */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+
+    background-color: whitesmoke;
+    border: 3px solid var(--deepGreen);
+    border-radius: 5px;
+    padding: 40px;
+    position: fixed;
+    width: 60%;
+    height: 40%;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(5px 5px 5px #222);
+}
