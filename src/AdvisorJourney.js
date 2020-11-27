@@ -33,17 +33,18 @@ export default function AdvisorJourney() {
                 return (
                     <div className="advisor-container">
                         <div className="question-box">
-                            <div>
-                                <h2>Let's begin with your location</h2>
-                                <h3>Seems like you're in Berlin, Germany</h3>
+                            <div className="advisor-middle">
+                                <div>
+                                    <h2>Let's begin with your location</h2>
+                                    <h3>
+                                        Seems like you're in Berlin, Germany
+                                    </h3>
+                                </div>
+                                <i
+                                    onClick={() => setStep(2)}
+                                    className="fas fa-chevron-circle-right advisor-nav"
+                                ></i>
                             </div>
-                        </div>
-
-                        <div className="advisor-btn-container">
-                            <i
-                                onClick={() => setStep(2)}
-                                className="fas fa-chevron-circle-right advisor-nav"
-                            ></i>
                         </div>
                     </div>
                 );
@@ -81,6 +82,10 @@ export default function AdvisorJourney() {
                                 <i
                                     onClick={() => setIndoor("ignore")}
                                     className="far fa-window-close"
+                                ></i>
+                                <i
+                                    onClick={() => setStep(1)}
+                                    className="fas fa-chevron-circle-left advisor-nav"
                                 ></i>
                             </div>
                             <div className="advisor-right">
@@ -131,19 +136,11 @@ export default function AdvisorJourney() {
                                     onClick={() => setType("ignore")}
                                     className="far fa-window-close"
                                 ></i>
+                                <i
+                                    onClick={() => setStep(3)}
+                                    className="fas fa-chevron-circle-right advisor-nav"
+                                ></i>
                             </div>
-                        </div>
-
-                        <div className="advisor-btn-container">
-                            <i
-                                onClick={() => setStep(1)}
-                                className="fas fa-chevron-circle-left advisor-nav"
-                            ></i>
-
-                            <i
-                                onClick={() => setStep(3)}
-                                className="fas fa-chevron-circle-right advisor-nav"
-                            ></i>
                         </div>
                     </div>
                 );

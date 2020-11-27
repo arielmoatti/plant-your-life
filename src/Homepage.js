@@ -18,12 +18,8 @@ export default function Homepage() {
         <>
             <div id="homepage-wrapper">
                 <div className="welcome-bubble">
-                    <h1>
-                        We help you find the best plants
-                        <br />
-                        <br />
-                        for you and your lifestyle.
-                    </h1>
+                    <h1>We help you find the best plants</h1>
+                    <h1>for you and your lifestyle.</h1>
                     <p>Our plant advisor will guide you through the journey.</p>
                     <Link to="/advisor">
                         <button className="homepage-btn">
