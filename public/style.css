@@ -121,12 +121,12 @@ button {
     color: var(--beige);
     border-radius: 5px;
     cursor: pointer;
+    transition: 300ms ease-in-out;
 }
 
 button:hover {
     background-color: var(--beige);
     color: var(--deepGreen);
-    transition: 400ms ease-in-out;
 }
 
 #homepage-wrapper {
@@ -197,7 +197,7 @@ button:hover {
     font-size: 50px;
     cursor: pointer;
     color: var(--redBrown);
-    transition: 400ms;
+    transition: 300ms;
 }
 
 .arrow:hover,
@@ -611,7 +611,7 @@ button:hover {
 }
 
 .question-box {
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
     display: flex;
     height: 450px;
     justify-content: space-between;
@@ -620,24 +620,28 @@ button:hover {
 .advisor-left,
 .advisor-right,
 .advisor-middle {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 45%;
     display: grid;
-    grid-template-rows: 3fr 4fr 1fr 1fr;
+    grid-template-rows: 3fr 3fr 1fr 3fr;
     justify-items: center;
     text-align: center;
-    gap: 20px;
-    padding: 20px;
+    /* gap: 20px;
+    padding: 20px; */
+}
+
+.advisor-middle {
+    width: 100%;
 }
 
 .advisor-icons-container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     width: 100%;
     font-size: 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: baseline;
+    /* align-items: baseline; */
 }
 
 .advisor-btn-container.results {
@@ -705,9 +709,10 @@ button:hover {
 .show-results {
     cursor: pointer;
     border-radius: 20px;
+    height: 50px;
     background-color: var(--redBrown);
     padding: 5px 15px;
-
+    justify-self: end;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -717,7 +722,6 @@ button:hover {
 
 .show-results > p {
     font-size: 30px;
-    /* color: var(--redBrown); */
     color: var(--beige);
     margin-top: 3px;
 }
@@ -730,18 +734,17 @@ button:hover {
     background-color: var(--muteLime);
 }
 
-.advisor-left .advisor-nav {
-    justify-self: start;
-    padding-left: 60px;
+.fa-seedling {
+    color: var(--beige);
+    font-size: 50px;
 }
 
-.advisor-right .advisor-nav {
+.fa-window-close {
     justify-self: end;
-    padding-right: 60px;
+    padding-right: 30px;
 }
 
-.advisor-middle .advisor-nav {
-    justify-self: end;
+.advisor-nav,
+.show-results {
     align-self: end;
-    padding-right: 60px;
 }

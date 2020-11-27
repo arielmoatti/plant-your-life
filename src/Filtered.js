@@ -70,9 +70,6 @@ export default function Filtered() {
                             ? `We have found ${filteredPlants.length} matching results!`
                             : "Oops! no results found... go back or start over"}
                     </h2>
-                    {/* <Link to="/advisor">
-                        <button>start over</button>
-                    </Link> */}
                 </div>
 
                 <div id="plantsList-wrapper">

@@ -40,6 +40,8 @@ export default function AdvisorJourney() {
                                         Seems like you're in Berlin, Germany
                                     </h3>
                                 </div>
+                                <div></div>
+                                <div></div>
                                 <i
                                     onClick={() => setStep(2)}
                                     className="fas fa-chevron-circle-right advisor-nav"
@@ -179,6 +181,10 @@ export default function AdvisorJourney() {
                                     }}
                                     className="far fa-window-close"
                                 ></i>
+                                <i
+                                    onClick={() => setStep(2)}
+                                    className="fas fa-chevron-circle-left advisor-nav"
+                                ></i>
                             </div>
                             <div className="advisor-right">
                                 <h2>care intensity</h2>
@@ -218,28 +224,22 @@ export default function AdvisorJourney() {
                                     onClick={() => setDiff("ignore")}
                                     className="far fa-window-close"
                                 ></i>
+                                <div
+                                    onClick={() => {
+                                        setStep(4);
+                                        setTimeout(() => {
+                                            setStep(5);
+                                        }, 3500);
+                                    }}
+                                    className="show-results"
+                                >
+                                    <p>show results </p>
+                                    <i className="fas fa-seedling"></i>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="advisor-btn-container">
-                            <i
-                                onClick={() => setStep(2)}
-                                className="fas fa-chevron-circle-left advisor-nav"
-                            ></i>
-
-                            <div
-                                onClick={() => {
-                                    setStep(4);
-                                    setTimeout(() => {
-                                        setStep(5);
-                                    }, 3500);
-                                }}
-                                className="show-results"
-                            >
-                                <p>show results </p>
-                                <i className="fas fa-seedling advisor-nav"></i>
-                            </div>
-                        </div>
+                        <div className="advisor-btn-container"></div>
                     </div>
                 );
             case 4:

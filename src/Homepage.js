@@ -29,14 +29,7 @@ export default function Homepage() {
                 </div>
                 <div id="all-plants-wrapper">
                     <p>or see all plants</p>
-                    {/* <button
-                        className="btnShowAllPlants"
-                        onClick={() => toggleAllPlants()}
-                    >
-                        {!allPlantsToggled
-                            ? "see all plants"
-                            : "hide full list"}
-                    </button> */}
+
                     <i
                         className={
                             !allPlantsToggled
