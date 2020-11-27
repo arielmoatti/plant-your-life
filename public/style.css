@@ -479,6 +479,11 @@ button:hover {
     padding: 5px 20px;
     font-size: 40px;
     cursor: pointer;
+    transition: 300ms;
+}
+
+.share:hover {
+    transform: scale(1.1);
 }
 
 .wishlist-header h3 {
@@ -723,8 +728,8 @@ button:hover {
 .modal h2 {
     border: 1px solid var(--bordo);
     border-radius: 10px;
-    padding: 15px;
-    line-height: 110%;
+    padding: 25px;
+    line-height: 115%;
 }
 .modal p {
     cursor: pointer;
