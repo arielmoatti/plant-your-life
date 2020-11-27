@@ -15,20 +15,6 @@ export default function Filtered() {
     let filters = useSelector((state) => state.filters && state.filters);
     let filteredPlants = plants;
 
-    //making sure that empty arrays appear falsy and filtered out (hide sections)
-    // plants && plants.length == 0 && (plants = null);
-
-    // useEffect(() => {
-    //     // console.log("filters in new component!", filters);
-    //     // filteredPlants = filters;
-    // }, [filters]);
-
-    // if (filters.type) {
-    //     filteredPlants = indoorFilter.filter((plant) => {
-    //         return plant.type == filters.type;
-    //     });
-    // }
-
     if (filters) {
         if (filters.indoor != "ignore") {
             filteredPlants = plants.filter((plant) => {

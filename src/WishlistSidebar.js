@@ -11,27 +11,15 @@ export default function WishlistSidebar() {
     const [sidebarVisible, setSidebarVisible] = useState(false);
 
     useEffect(() => {
-        let abort;
-        (async () => {
-            try {
-                if (!abort) {
-                    wishedPlants &&
-                        localStorage.setItem(
-                            "saved-wishlist",
-                            JSON.stringify(wishedPlants)
-                        );
-                }
-                // else {
-                //     console.log("aborted!");
-                // }
-            } catch (err) {
-                console.log("error in axios GET /user/search: ", err);
-            }
-        })();
-        // console.log("filters in Journey", filters);
-        return () => {
-            abort = true; //to make sure the results come in the right order, ignoring fast typing
-        };
+        try {
+            wishedPlants &&
+                localStorage.setItem(
+                    "saved-wishlist",
+                    JSON.stringify(wishedPlants)
+                );
+        } catch (err) {
+            console.log("error in localStorage ", err);
+        }
     }, [wishedPlants]);
 
     useEffect(() => {

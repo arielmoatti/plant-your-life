@@ -6,7 +6,6 @@ import Filtered from "./Filtered";
 
 export default function AdvisorJourney() {
     const dispatch = useDispatch();
-    let filters = useSelector((state) => state.filters && state.filters);
 
     const [step, setStep] = useState(1);
     let [indoor, setIndoor] = useState("ignore");
