@@ -404,6 +404,10 @@ button:hover {
     filter: drop-shadow(2px 2px 10px #222);
 }
 
+#wishlist-sidebar h3 {
+    padding-bottom: 10px;
+}
+
 #wishlist-sidebar .img-container {
     max-height: 50px;
     max-width: 50px;
@@ -454,21 +458,31 @@ button:hover {
     gap: 15px;
 }
 
-.emptyWishlist {
+.wishlist-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    margin-top: 30px;
+    /* height: 300px; */
     color: var(--darkPurple);
 }
 
-.emptyWishlist h1 {
-    padding-bottom: 50px;
+.share {
+    display: flex;
+    /* align-content: center; */
+    border-radius: 30px;
+    background-color: var(--muteLime);
+
+    gap: 30px;
+    margin-top: 15px;
+    padding: 5px 20px;
+    font-size: 40px;
+    cursor: pointer;
 }
 
-.emptyWishlist h3 {
-    padding-bottom: 10px;
+.wishlist-header h3 {
+    padding: 50px 0 10px 0;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ADVISOR ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -519,7 +533,7 @@ button:hover {
 .advisor-middle {
     width: 100%;
     align-items: center;
-    padding: 20px 50px 0px 50px;
+    padding: 20px 40px 0px 40px;
 }
 
 .advisor-middle h1 {

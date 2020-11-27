@@ -36,12 +36,15 @@ export default function AdvisorJourney() {
                             <div className="advisor-middle">
                                 <h1>Welcome to the plant advisor!</h1>
                                 <h2>
-                                    This is where the magic happens. Depending
-                                    on your geographic location, indoors or
-                                    balcony, plant type {"("}
-                                    flowering, edible...{")"}, pet friendly or
-                                    air purifier, just filter what's important
-                                    for you and enjoy the ride!
+                                    Here is where the magic happens. First
+                                    choose your location, filter what's
+                                    important for you - indoors or balcony,
+                                    plant type {"("}
+                                    flowering, edible etc.{")"}, pet friendly or
+                                    air purifier, and then get your tailored
+                                    results.
+                                    <br />
+                                    Enjoy the ride!
                                 </h2>
                                 <div className="location-container">
                                     <div>
@@ -106,8 +109,8 @@ export default function AdvisorJourney() {
                             </div>
                             <div className="advisor-right">
                                 <h2>
-                                    Are you fancy for a foliage, flowering,
-                                    succulent or an edible plant?
+                                    Do you fancy a foliage, flowering, succulent
+                                    or an edible plant?
                                 </h2>
                                 <div className="advisor-icons-container">
                                     <img
