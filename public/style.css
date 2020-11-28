@@ -57,6 +57,10 @@ a {
     margin: 30px;
     height: 120px;
     filter: drop-shadow(5px 5px 3px #222);
+    transition: 300ms;
+}
+.logo:hover {
+    transform: scale(1.05);
 }
 
 #headerElem > nav {
