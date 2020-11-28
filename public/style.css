@@ -59,6 +59,7 @@ a {
     filter: drop-shadow(5px 5px 3px #222);
     transition: 300ms;
 }
+
 .logo:hover {
     transform: scale(1.05);
 }
@@ -216,12 +217,21 @@ button:hover {
     flex-direction: column;
     position: relative;
     filter: drop-shadow(2px 2px 1px #222);
-    transition: 200ms ease-in-out;
+
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) scale(1);
+
+    transition: transform 600ms ease-out, filter 200ms ease-in-out;
 }
 
 #plant-card:hover {
     filter: drop-shadow(5px 5px 3px #222);
     cursor: grab;
+}
+
+.flagHidden#plant-card {
+    transform: rotateY(-360deg) scale(1);
 }
 
 #plant-card .img-container {
@@ -277,17 +287,6 @@ button:hover {
 .card-lower-container h2 {
     font-size: 22px;
     padding: 3px 0px;
-}
-
-#plant-card {
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transform: rotateY(0deg) scale(1);
-    transition: 600ms ease-out;
-}
-
-.flagHidden#plant-card {
-    transform: rotateY(-360deg) scale(1);
 }
 
 #frontSide,

@@ -53,11 +53,11 @@ VALUES
 ),
 ('ZZ Plant','Zamioculcas zamiifolia','https://www.houseplantsexpert.com/image-files/zz_plant.png','Foliage',FALSE,FALSE,1,2,TRUE,'15-24','30',1
 ),
-('Cylamen','Cyclamen persicum ','https://www.houseplantsexpert.com/assets/images/cyclamen_persicum_variety.jpg','Flowering',FALSE,FALSE,2,2,FALSE,'10-18','25',2
+('Cylamen','Cyclamen persicum','https://www.houseplantsexpert.com/assets/images/cyclamen_persicum_variety.jpg','Flowering',FALSE,FALSE,2,2,FALSE,'10-18','25',2
 ),
 ('Eternal Flame','Calathea Crocata','https://www.houseplantsexpert.com/assets/images/calathea_crocata.jpg','Flowering',TRUE,FALSE,3,2,TRUE,'16-25','45',2
 ),
-('Barberton Daisy','Gebera Jamesonii ','https://www.outsidepride.com/images/products/detail/gardenflower/gerberapastelorange1.jpg','Flowering',TRUE,TRUE,3,3,FALSE,'13-24','65',2
+('Barberton Daisy','Gebera Jamesonii','https://www.outsidepride.com/images/products/detail/gardenflower/gerberapastelorange1.jpg','Flowering',TRUE,TRUE,3,3,FALSE,'13-24','65',2
 ),
 ('Angel Wing Begonia','Begonia coccinea','https://www.houseplantsexpert.com/assets/images/angel_wing_begonia.jpg','Flowering',FALSE,FALSE,3,1,TRUE,'13-25','120',3
 ),
@@ -65,7 +65,7 @@ VALUES
 ),
 ('Housetree Leek','Aeonium Arboreum','https://www.houseplantsexpert.com/assets/images/aeonium_arboreum_atropurpureum.jpg','Succulents',TRUE,FALSE,3,3,TRUE,'21-30','90',2
 ),
-('Peruvian Apple Cactus ','Cereus peruvianus','https://www.houseplantsexpert.com/image-files/peruvian-apple-cactus-close-up.jpg','Succulents',TRUE,FALSE,1,3,TRUE,'16-24','120',1
+('Peruvian Apple Cactus','Cereus peruvianus','https://www.houseplantsexpert.com/image-files/peruvian-apple-cactus-close-up.jpg','Succulents',TRUE,FALSE,1,3,TRUE,'16-24','120',1
 ),
 ('Sweet Basil','Ocimum basilicum','https://bilder.t-online.de/b/85/78/77/44/id_85787744/610/tid_da/basilikumpflanze-basilikum-fuehlt-sich-an-warmen-sonnigen-plaetzen-besonders-wohl-braucht-aber-viel-wasser-.jpg','Edible',TRUE,FALSE,3,3,FALSE,'10-25','30',2
 ),

@@ -45,12 +45,6 @@ const uploader = multer({
 ////////////////////////////////////////////
 
 ////////////////////// MIDDLEWARE //////////////////////
-// app.use(
-//     cookieSession({
-//         secret: `we need more cowbell!`,
-//         maxAge: 1000 * 60 * 60 * 24 * 14,
-//     })
-// );
 
 const cookieSessionMiddleware = cookieSession({
     secret: `we need more cowbell!`,
