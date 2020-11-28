@@ -35,7 +35,11 @@ export default function Card({ plant }) {
         }
     };
     return (
-        <div id="plant-card" key={plant.id}>
+        <div
+            id="plant-card"
+            className={plant.flipped ? "flagHidden" : undefined}
+            key={plant.id}
+        >
             <div
                 id="frontSide"
                 className={plant.flipped ? "flagHidden" : undefined}

@@ -275,6 +275,17 @@ button:hover {
     padding: 3px 0px;
 }
 
+#plant-card {
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) scale(1);
+    transition: 600ms ease-out;
+}
+
+.flagHidden#plant-card {
+    transform: rotateY(-360deg) scale(1);
+}
+
 #frontSide,
 #backSide {
     position: absolute;
@@ -282,13 +293,13 @@ button:hover {
     left: 10px;
     transition: 600ms ease-out;
     backface-visibility: hidden;
-    /* transform-style: preserve-3d; */
+    transform-style: preserve-3d;
+    transform: rotateY(0deg) scale(1);
     opacity: 1;
 }
 
 #frontSide {
     color: var(--deepGreen);
-    transform: rotateY(0deg) scale(1);
 }
 
 #backSide {
@@ -298,13 +309,11 @@ button:hover {
     height: 418px;
     width: 300px;
     padding: 15px;
-
-    transform: rotateY(0deg) scale(1);
 }
 
 .flagHidden#frontSide,
 .flagHidden#backSide {
-    transform: rotateY(-180deg) scale(0.1) translateY(-30%);
+    transform: rotateY(-180deg) scale(1) translateY(0%);
     z-index: -1;
     opacity: 0;
 }
