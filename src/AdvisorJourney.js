@@ -31,39 +31,37 @@ export default function AdvisorJourney() {
             case 1:
                 return (
                     <div className="advisor-container">
-                        <div className="question-box">
-                            <div className="advisor-middle">
-                                <h1>Welcome to the plant advisor!</h1>
-                                <h2>
-                                    Here is where the magic happens. First
-                                    choose your location, filter what's
-                                    important for you - indoors or balcony,
-                                    plant type {"("}
-                                    flowering, edible etc.{")"}, pet friendly or
-                                    air purifier, and then get your tailored
-                                    results.
-                                    <br />
-                                    Enjoy the ride!
-                                </h2>
-                                <div className="location-container">
-                                    <div>
-                                        <i className="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div className="location-box">
-                                        <h3>Seems like you're in</h3>
-                                        <select>
-                                            <option>Berlin, Germany</option>
-                                            <option>change location...</option>
-                                        </select>
-                                    </div>
+                        {/* <div className="question-box"> */}
+                        <div className="advisor-middle">
+                            <h1>Welcome to the plant advisor!</h1>
+                            <h2>
+                                Here is where the magic happens. First choose
+                                your location, filter what's important for you -
+                                indoors or balcony, plant type {"("}
+                                flowering, edible etc.{")"}, pet friendly or air
+                                purifier, and then get your tailored results.
+                                <br />
+                                Enjoy the ride!
+                            </h2>
+                            <div className="location-container">
+                                <div>
+                                    <i className="fas fa-map-marker-alt"></i>
                                 </div>
-
-                                <i
-                                    onClick={() => setStep(2)}
-                                    className="fas fa-chevron-circle-right advisor-nav"
-                                ></i>
+                                <div className="location-box">
+                                    <h3>Seems like you're in</h3>
+                                    <select>
+                                        <option>Berlin, Germany</option>
+                                        <option>change location...</option>
+                                    </select>
+                                </div>
                             </div>
+
+                            <i
+                                onClick={() => setStep(2)}
+                                className="fas fa-chevron-circle-right advisor-nav"
+                            ></i>
                         </div>
+                        {/* </div> */}
                     </div>
                 );
             case 2:
@@ -111,7 +109,7 @@ export default function AdvisorJourney() {
                                     Do you fancy a foliage, flowering, succulent
                                     or an edible plant?
                                 </h2>
-                                <div className="advisor-icons-container">
+                                <div className="advisor-icons-container multiple">
                                     <img
                                         onClick={() => setType("Foliage")}
                                         id="advisor-icon"
@@ -214,7 +212,7 @@ export default function AdvisorJourney() {
                                     And finally, you can choose the care
                                     difficulty level...
                                 </h2>
-                                <div className="advisor-icons-container">
+                                <div className="advisor-icons-container multiple">
                                     <img
                                         onClick={() => setDiff(1)}
                                         id="advisor-icon"
@@ -265,7 +263,7 @@ export default function AdvisorJourney() {
                             </div>
                         </div>
 
-                        <div className="advisor-btn-container"></div>
+                        {/* <div className="advisor-btn-container"></div> */}
                     </div>
                 );
             case 4:
