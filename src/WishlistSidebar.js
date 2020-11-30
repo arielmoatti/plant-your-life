@@ -57,7 +57,7 @@ export default function WishlistSidebar() {
                         : "sidebar-hidden"
                 }
             >
-                <h3>my wish list</h3>
+                <h3>wish list</h3>
                 <div className="items">
                     {wishedPlants && (
                         <div>

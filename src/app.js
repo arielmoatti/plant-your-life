@@ -65,7 +65,10 @@ export default function App() {
                     <Route exact path="/results" render={() => <Filtered />} />
                     {modalVisible && (
                         <>
-                            <div className="overlay"></div>
+                            <div
+                                className="overlay"
+                                onClick={methodInApp}
+                            ></div>
 
                             <Modal methodInApp={methodInApp} />
                         </>
