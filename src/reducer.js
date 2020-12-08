@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 export default (state = {}, action) => {
     switch (action.type) {
         case "GET_ALL_PLANTS":
@@ -6,10 +7,6 @@ export default (state = {}, action) => {
                     ...action.allPlants.filter((plant) => plant.wished == true),
                 ],
                 allPlants: action.allPlants,
-                // filters: {},
-                //     ...state.filters,
-                //     indoor: "ignore",
-                // },
             }));
 
         case "ADDED_WISHLIST":
@@ -41,56 +38,6 @@ export default (state = {}, action) => {
                         return {
                             ...plant,
                             wished: false,
-                        };
-                    } else {
-                        return plant;
-                    }
-                }),
-            });
-
-        case "FLIP_BACK":
-            return (state = {
-                ...state,
-                allPlants: state.allPlants.map((plant) => {
-                    if (plant.id == action.id) {
-                        return {
-                            ...plant,
-                            flipped: true,
-                        };
-                    } else {
-                        return plant;
-                    }
-                }),
-                wishlist: state.wishlist.map((plant) => {
-                    if (plant.id == action.id) {
-                        return {
-                            ...plant,
-                            flipped: true,
-                        };
-                    } else {
-                        return plant;
-                    }
-                }),
-            });
-
-        case "FLIP_FRONT":
-            return (state = {
-                ...state,
-                allPlants: state.allPlants.map((plant) => {
-                    if (plant.id == action.id) {
-                        return {
-                            ...plant,
-                            flipped: false,
-                        };
-                    } else {
-                        return plant;
-                    }
-                }),
-                wishlist: state.wishlist.map((plant) => {
-                    if (plant.id == action.id) {
-                        return {
-                            ...plant,
-                            flipped: false,
                         };
                     } else {
                         return plant;

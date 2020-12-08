@@ -7,7 +7,6 @@ import Logo from "./Logo";
 import Homepage from "./Homepage";
 import Wishlist from "./Wishlist";
 import Advisor from "./Advisor";
-import Filtered from "./Filtered";
 import Modal from "./Modal";
 
 export default function App() {
@@ -62,7 +61,6 @@ export default function App() {
                         render={() => <Wishlist methodInApp={methodInApp} />}
                     />
                     <Route exact path="/advisor" render={() => <Advisor />} />
-                    <Route exact path="/results" render={() => <Filtered />} />
                     {modalVisible && (
                         <>
                             <div

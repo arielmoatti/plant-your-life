@@ -41,20 +41,6 @@ export function removeFromWishlist(plant) {
     };
 }
 
-export function showBack(plantId) {
-    return {
-        type: "FLIP_BACK",
-        id: plantId,
-    };
-}
-
-export function showFront(plantId) {
-    return {
-        type: "FLIP_FRONT",
-        id: plantId,
-    };
-}
-
 let arg = true;
 export function triggerWishlist() {
     arg = !arg;

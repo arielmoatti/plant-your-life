@@ -13,6 +13,7 @@ import {
 export default function Card({ plant }) {
     const dispatch = useDispatch();
     const [wishIconHover, setWishIconHover] = useState(false);
+    const [flipped, setFlipped] = useState(false);
 
     let toggleWishlistIcon = (e, plant) => {
         e.stopPropagation();
@@ -27,24 +28,22 @@ export default function Card({ plant }) {
         }
     };
 
-    let toggleCardSide = (plant) => {
-        if (!plant.flipped) {
-            dispatch(showBack(plant.id));
+    let toggleCardSide = () => {
+        if (!flipped) {
+            setFlipped(true);
         } else {
-            dispatch(showFront(plant.id));
+            setFlipped(false);
         }
     };
+
     return (
         <div
             id="plant-card"
-            className={plant.flipped ? "flagHidden" : undefined}
+            className={flipped ? "flagHidden" : undefined}
+            onClick={() => toggleCardSide()}
             key={plant.id}
         >
-            <div
-                id="frontSide"
-                className={plant.flipped ? "flagHidden" : undefined}
-                onClick={() => toggleCardSide(plant)}
-            >
+            <div id="frontSide" className={flipped ? "flagHidden" : undefined}>
                 <div
                     id="wishIcon"
                     className={
@@ -139,11 +138,7 @@ export default function Card({ plant }) {
                     </div>
                 </div>
             </div>
-            <div
-                id="backSide"
-                className={plant.flipped ? undefined : "flagHidden"}
-                onClick={() => toggleCardSide(plant)}
-            >
+            <div id="backSide" className={flipped ? undefined : "flagHidden"}>
                 <div id="back-card-top">
                     <div className="img-container">
                         <img
