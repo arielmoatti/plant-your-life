@@ -756,7 +756,6 @@ button:hover {
     flex-direction: column;
     text-align: center;
     gap: 40px;
-
     background-color: whitesmoke;
     border: 3px solid var(--deepGreen);
     border-radius: 5px;

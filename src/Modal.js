@@ -18,7 +18,7 @@ export default function Modal({ methodInApp }) {
         <>
             <div className="modal">
                 <h3>
-                    These options are available for registered users only.
+                    These options are only available for registered users.
                     <br />
                     Please take a moment to sign up, or simply log in
                 </h3>
