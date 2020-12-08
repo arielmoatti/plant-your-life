@@ -21,7 +21,7 @@ export default function Modal({ methodInApp }) {
                     These options are only available for registered users.
                     <br />
                     Please take a moment to sign up, or simply log in using the
-                    menu
+                    menu above
                 </h3>
                 <h2>
                     share your wish list, set various notifications for your
