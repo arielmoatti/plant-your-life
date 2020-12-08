@@ -1,10 +1,9 @@
 import * as io from "socket.io-client";
-// import { mbdbHistory, mbdbNewEntry } from "./actions";
 
 export let socket;
 
 export const init = (store) => {
     if (!socket) {
-        socket = io.connect();
+        // socket = io.connect(); //uncomment this if you want to use sockets!
     } //end of IF block
 };
